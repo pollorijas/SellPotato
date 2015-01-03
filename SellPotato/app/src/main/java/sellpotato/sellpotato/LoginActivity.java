@@ -1,17 +1,26 @@
 package sellpotato.sellpotato;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class LoginActivity extends Activity {
+
+    EditText ingreso_rut,ingreso_pass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        ingreso_rut = (EditText)findViewById(R.id.ingreso_rut);
+        ingreso_pass = (EditText)findViewById(R.id.password);
     }
 
 
@@ -35,5 +44,26 @@ public class LoginActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void login_control(View v)
+    {
+        String rut = ingreso_rut.getText().toString();
+        String pass = ingreso_pass.getText().toString();
+
+        if(rut.length() > 10)
+        {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            dialog.setTitle("Dotos Mal Ingresados").setMessage("Su rut o su Contraseña han sido mal ingresadas").setNeutralButton(R.string.aceptar, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+            dialog.show();
+        }
+        else
+        {
+        }
     }
 }

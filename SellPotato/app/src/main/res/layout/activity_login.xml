@@ -9,4 +9,60 @@
     android:clickable="false"
     android:background="#f5ffb800">
 
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ingreso_rut"
+        android:hint="@string/ingreso_rut"
+        android:maxLength="30"
+        android:textSize="24sp"
+        android:background="#ffffffff"
+        android:editable="true"
+        android:singleLine="true"
+        android:inputType="text"
+        android:layout_above="@+id/password"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_marginBottom="62dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:background="#ffffffff"
+        android:maxLength="30"
+        android:textSize="24sp"
+        android:editable="true"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:linksClickable="false"
+        android:singleLine="true"
+        android:password="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in"
+        android:id="@+id/login_button"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/password"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:background="#ffc5ff00"
+        android:textSize="24sp"
+        android:onClick="login_control" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:id="@+id/cancel_button"
+        android:layout_alignTop="@+id/login_button"
+        android:layout_alignRight="@+id/password"
+        android:layout_alignEnd="@+id/password"
+        android:background="#ffc5ff00"
+        android:textSize="24sp" />
 </RelativeLayout>
