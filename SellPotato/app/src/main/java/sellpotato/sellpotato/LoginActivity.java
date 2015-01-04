@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import sellpotato.sellpotato.helpclass.HelpFuntion;
+
 
 public class LoginActivity extends Activity {
 
@@ -46,15 +48,35 @@ public class LoginActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    //Funcion en OnClick del boton Sign In
     public void login_control(View v)
     {
         String rut = ingreso_rut.getText().toString();
         String pass = ingreso_pass.getText().toString();
 
-        if(rut.length() > 10)
+        if(rut.length() == 10)
         {
+            if(HelpFuntion.validarRut(rut))
+            {
+                //verificar rut y pass en la base de datos aun no terminado se hablara mañana de esto
+                Int
+            }
+            else{
+                AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                dialog.setTitle("Dotos Mal Ingresados").setMessage("Su Rut o Contraseña han sido mal ingresadas").setNeutralButton(R.string.aceptar, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                dialog.show();
+            }
+        }
+        else
+        {
+            //En caso de que el rut no tenga el tamaño adecuado
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-            dialog.setTitle("Dotos Mal Ingresados").setMessage("Su rut o su Contraseña han sido mal ingresadas").setNeutralButton(R.string.aceptar, new DialogInterface.OnClickListener() {
+            dialog.setTitle("Dotos Mal Ingresados").setMessage("Su Rut o Contraseña han sido mal ingresadas").setNeutralButton(R.string.aceptar, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
 
@@ -62,8 +84,26 @@ public class LoginActivity extends Activity {
             });
             dialog.show();
         }
-        else
-        {
-        }
+    }
+
+
+    //Click en salir de la aplicacion
+    public void salir_aplicacion(View v)
+    {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Salir");
+        dialog.setMessage("Esta seguro que desea salir de la Aplicación");
+        dialog.setPositiveButton(R.string.si, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        }).setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                return;
+            }
+        });
+        dialog.show();
     }
 }

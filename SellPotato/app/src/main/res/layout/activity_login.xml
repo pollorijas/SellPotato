@@ -64,5 +64,6 @@
         android:layout_alignRight="@+id/password"
         android:layout_alignEnd="@+id/password"
         android:background="#ffc5ff00"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:onClick="salir_aplicacion" />
 </RelativeLayout>
