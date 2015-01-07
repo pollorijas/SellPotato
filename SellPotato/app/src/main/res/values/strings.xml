@@ -16,5 +16,7 @@
     <string name="title_activity_registro">Registro</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
+    <string name="domicilio">Dirección</string>
+    <string name="descripcionhogar">Descripcion de Hogar</string>
 
 </resources>
