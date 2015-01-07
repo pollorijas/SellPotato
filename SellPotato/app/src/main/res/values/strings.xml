@@ -12,5 +12,9 @@
     <string name="aceptar">Aceptar</string>
     <string name="si">Si</string>
     <string name="no">No</string>
+    <string name="registrar">Registrar</string>
+    <string name="title_activity_registro">Registro</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
 
 </resources>

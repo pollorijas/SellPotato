@@ -3,6 +3,7 @@ package sellpotato.sellpotato;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -59,7 +60,6 @@ public class LoginActivity extends Activity {
             if(HelpFuntion.validarRut(rut))
             {
                 //verificar rut y pass en la base de datos aun no terminado se hablara mañana de esto
-                Int
             }
             else{
                 AlertDialog.Builder dialog = new AlertDialog.Builder(this);
@@ -105,5 +105,11 @@ public class LoginActivity extends Activity {
             }
         });
         dialog.show();
+    }
+
+    public void registrar(View v)
+    {
+        Intent act = new Intent(this, Registro.class);
+        startActivity(act);
     }
 }
