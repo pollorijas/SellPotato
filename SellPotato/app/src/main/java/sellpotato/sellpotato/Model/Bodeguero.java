@@ -1,29 +1,43 @@
-package sellpotato.sellpotato.Model;
 
-import java.io.Serializable;
 
 /**
- * Created by Freddy on 04-01-2015.
+ * @author Freddy
+ * @version 1.0
+ * @created 08-ene-2015 19:29:24
  */
-public class Bodeguero extends Persona implements Serializable{
+public class Bodeguero extends Persona {
 
-    private String nombre_local;
+	private String direccionLocal;
+	private String nombreLocal;
 
-    public String getNombre_local() {
-        return nombre_local;
-    }
+	public Bodeguero(){
 
-    public void setNombre_local(String nombre_local) {
-        this.nombre_local = nombre_local;
-    }
+	}
 
-    public Bodeguero(String rut, String nombre, String apellido) {
-        super(rut, nombre, apellido);
-    }
+	public void finalize() throws Throwable {
+		super.finalize();
+	}
+	public String getnombreLocal(){
+		return nombreLocal;
+	}
 
-    public Bodeguero(String rut, String nombre, String apellido, String nombre_local) {
-        super(rut, nombre, apellido);
-        this.nombre_local = nombre_local;
-    }
+	/**
+	 * 
+	 * @param newVal
+	 */
+	public void setnombreLocal(String newVal){
+		nombreLocal = newVal;
+	}
 
-}
+	public String getdireccionLocal(){
+		return direccionLocal;
+	}
+
+	/**
+	 * 
+	 * @param newVal
+	 */
+	public void setdireccionLocal(String newVal){
+		direccionLocal = newVal;
+	}
+}//end Bodeguero

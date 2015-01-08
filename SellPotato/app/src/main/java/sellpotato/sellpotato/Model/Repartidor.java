@@ -1,28 +1,44 @@
-package sellpotato.sellpotato.Model;
 
-import java.io.Serializable;
 
 /**
- * Created by Freddy on 04-01-2015.
+ * @author Freddy
+ * @version 1.0
+ * @created 08-ene-2015 19:29:25
  */
-public class Repartidor extends Persona implements Serializable {
+public class Repartidor extends Persona {
 
-    private String licencia;
+	private String estado;
+	private String licenciaConducir;
+	public Ruta m_Ruta;
 
-    public String getLicencia() {
-        return licencia;
-    }
+	public Repartidor(){
 
-    public void setLicencia(String licencia) {
-        this.licencia = licencia;
-    }
+	}
 
-    public Repartidor(String rut, String nombre, String apellido, String licencia) {
-        super(rut, nombre, apellido);
-        this.licencia = licencia;
-    }
+	public void finalize() throws Throwable {
+		super.finalize();
+	}
+	public String getlicenciaConducir(){
+		return licenciaConducir;
+	}
 
-    public Repartidor(String rut, String nombre, String apellido) {
-        super(rut, nombre, apellido);
-    }
-}
+	/**
+	 * 
+	 * @param newVal
+	 */
+	public void setlicenciaConducir(String newVal){
+		licenciaConducir = newVal;
+	}
+
+	public String getestado(){
+		return estado;
+	}
+
+	/**
+	 * 
+	 * @param newVal
+	 */
+	public void setestado(String newVal){
+		estado = newVal;
+	}
+}//end Repartidor

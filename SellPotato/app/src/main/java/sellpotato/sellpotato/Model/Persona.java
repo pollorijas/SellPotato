@@ -1,43 +1,56 @@
-package sellpotato.sellpotato.Model;
 
-import java.io.Serializable;
 
 /**
- * Created by Freddy on 04-01-2015.
+ * @author Freddy
+ * @version 1.0
+ * @created 08-ene-2015 19:29:25
  */
-public abstract class Persona implements Serializable{
+public abstract class Persona {
 
-    private String rut;
-    private String nombre;
-    private String apellido;
+	private String apellido;
+	private String nombre;
+	private String rut;
 
-    public String getRut() {
-        return rut;
-    }
+	public Persona(){
 
-    public void setRut(String rut) {
-        this.rut = rut;
-    }
+	}
 
-    public String getNombre() {
-        return nombre;
-    }
+	public void finalize() throws Throwable {
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+	}
+	public String getapellido(){
+		return apellido;
+	}
 
-    public String getApellido() {
-        return apellido;
-    }
+	public String getnombre(){
+		return nombre;
+	}
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+	public String getrut(){
+		return rut;
+	}
 
-    protected Persona(String rut, String nombre, String apellido) {
-        this.rut = rut;
-        this.nombre = nombre;
-        this.apellido = apellido;
-    }
-}
+	/**
+	 * 
+	 * @param newVal
+	 */
+	public void setapellido(String newVal){
+		apellido = newVal;
+	}
+
+	/**
+	 * 
+	 * @param newVal
+	 */
+	public void setnombre(String newVal){
+		nombre = newVal;
+	}
+
+	/**
+	 * 
+	 * @param newVal
+	 */
+	public void setrut(String newVal){
+		rut = newVal;
+	}
+}//end Persona

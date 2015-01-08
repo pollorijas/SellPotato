@@ -1,48 +1,58 @@
-package sellpotato.sellpotato.Model;
 
-import java.io.Serializable;
 
 /**
- * Created by Freddy on 04-01-2015.
+ * @author Freddy
+ * @version 1.0
+ * @created 08-ene-2015 19:29:24
  */
-public class Cliente extends Persona implements Serializable{
+public class Cliente extends Persona {
 
-    private String direccion;
-    private int fono;
-    private String descripcion_hogar;
+	private String descripcionHogar;
+	private String direccion;
+	private double fono;
+	public Pedido m_Pedido;
+	public Ruta m_Ruta;
 
-    public String getDireccion() {
-        return direccion;
-    }
+	public Cliente(){
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
+	}
 
-    public int getFono() {
-        return fono;
-    }
+	public void finalize() throws Throwable {
+		super.finalize();
+	}
+	public String getdescripcionHogar(){
+		return descripcionHogar;
+	}
 
-    public void setFono(int fono) {
-        this.fono = fono;
-    }
+	/**
+	 * 
+	 * @param newVal
+	 */
+	public void setdescripcionHogar(String newVal){
+		descripcionHogar = newVal;
+	}
 
-    public String getDescripcion_hogar() {
-        return descripcion_hogar;
-    }
+	public String getdireccion(){
+		return direccion;
+	}
 
-    public void setDescripcion_hogar(String descripcion_hogar) {
-        this.descripcion_hogar = descripcion_hogar;
-    }
+	/**
+	 * 
+	 * @param newVal
+	 */
+	public void setdireccion(String newVal){
+		direccion = newVal;
+	}
 
-    public Cliente(String rut, String nombre, String apellido, String direccion, int fono, String descripcion_hogar) {
-        super(rut, nombre, apellido);
-        this.direccion = direccion;
-        this.fono = fono;
-        this.descripcion_hogar = descripcion_hogar;
-    }
+	public double getfono(){
+		return fono;
+	}
 
-    public Cliente(String rut, String nombre, String apellido) {
-        super(rut, nombre, apellido);
-    }
-}
+	/**
+	 * 
+	 * @param newVal
+	 */
+	public void setfono(double newVal){
+		fono = newVal;
+	}
+}//end Cliente
