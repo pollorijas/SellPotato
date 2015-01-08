@@ -24,7 +24,11 @@
         <activity
             android:name=".Registro"
             android:label="@string/title_activity_registro"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Login_In"
+            android:label="@string/title_activity_login__in" >
         </activity>
     </application>
 
