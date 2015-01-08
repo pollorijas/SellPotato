@@ -7,7 +7,7 @@
     tools:context="sellpotato.sellpotato.Registro"
     android:background="#f5ffb800">
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/nombre"
@@ -18,9 +18,10 @@
         android:background="#ffffffff"
         android:singleLine="true"
         android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false" />
+        android:layout_alignParentStart="false"
+        android:editable="true" />
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/apellido"
@@ -31,9 +32,10 @@
         android:layout_below="@+id/nombre"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="false" />
+        android:layout_alignParentStart="false"
+        android:editable="true" />
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rut_registro"
@@ -43,9 +45,10 @@
         android:singleLine="true"
         android:layout_below="@+id/apellido"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:editable="true" />
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/domicilio"
@@ -53,6 +56,7 @@
         android:background="#ffffffff"
         android:textSize="24sp"
         android:singleLine="true"
+        android:editable="true"
         android:layout_below="@+id/rut_registro"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -66,7 +70,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textSize="24sp"
-        android:background="#ffc5ff00" />
+        android:background="#ffc5ff00"
+        android:onClick="cancel" />
 
     <Button
         android:layout_width="wrap_content"
@@ -78,6 +83,37 @@
         android:layout_alignParentStart="true"
         android:textSize="24sp"
         android:background="#ffc5ff00" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/r_fono"
+        android:layout_below="@+id/domicilio"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/domicilio"
+        android:layout_alignEnd="@+id/domicilio"
+        android:textSize="24sp"
+        android:hint="@string/r_telfono"
+        android:background="#ffffffff" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/r_decripcion"
+        android:layout_below="@+id/r_fono"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/r_cancel"
+        android:background="#ffffffff"
+        android:hint="@string/r_descripcion"
+        android:textSize="24sp"
+        android:elegantTextHeight="false"
+        android:layout_alignParentTop="false"
+        android:minLines="8" />
 
 
 </RelativeLayout>

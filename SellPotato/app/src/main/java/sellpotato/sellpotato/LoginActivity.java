@@ -92,7 +92,7 @@ public class LoginActivity extends Activity {
     {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("Salir");
-        dialog.setMessage("Esta seguro que desea salir de la Aplicación");
+        dialog.setMessage("¿Esta seguro que desea salir de la Aplicación?");
         dialog.setPositiveButton(R.string.si, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

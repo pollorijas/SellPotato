@@ -1,10 +1,12 @@
 package sellpotato.sellpotato;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Registro extends Activity {
@@ -36,5 +38,24 @@ public class Registro extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void cancel(View v)
+    {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Cancelar Registro");
+        dialog.setMessage("¿Esta seguro que desea Cancelar el Registro?");
+        dialog.setPositiveButton(R.string.si, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        }).setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                return;
+            }
+        });
+        dialog.show();
     }
 }

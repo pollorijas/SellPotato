@@ -18,5 +18,7 @@
     <string name="apellido">Apellido</string>
     <string name="domicilio">Dirección</string>
     <string name="descripcionhogar">Descripcion de Hogar</string>
+    <string name="r_telfono">Telefono</string>
+    <string name="r_descripcion">Descripcion</string>
 
 </resources>
