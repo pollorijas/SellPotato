@@ -1,4 +1,4 @@
-
+package sellpotato.sellpotato.Model;
 
 /**
  * @author Freddy

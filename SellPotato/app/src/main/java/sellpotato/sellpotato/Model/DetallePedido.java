@@ -1,4 +1,4 @@
-
+package sellpotato.sellpotato.Model;
 
 /**
  * @author Freddy
@@ -32,14 +32,14 @@ public class DetallePedido {
 	}
 
 	public int getrecioVenta(){
-		return recioVenta;
+		return precioVenta;
 	}
 
 	/**
 	 * 
 	 * @param newVal
 	 */
-	public void setrecioVenta(int newVal){
-		recioVenta = newVal;
+	public void setprecioVenta(int newVal){
+		precioVenta = newVal;
 	}
 }//end DetallePedido

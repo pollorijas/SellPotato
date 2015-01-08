@@ -1,4 +1,4 @@
-
+package sellpotato.sellpotato.Model;
 
 /**
  * @author Freddy
@@ -45,16 +45,16 @@ public class Camion {
 		Dimencion = newVal;
 	}
 
-	public int getcarga(){
-		return carga;
+	public int gettara(){
+		return tara;
 	}
 
 	/**
 	 * 
 	 * @param newVal
 	 */
-	public void setcarga(int newVal){
-		carga = newVal;
+	public void settara(int newVal){
+		tara = newVal;
 	}
 
 	public String getmarca(){

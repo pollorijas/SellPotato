@@ -1,4 +1,6 @@
+package sellpotato.sellpotato.Model;
 
+import sellpotato.sellpotato.Model.Persona;
 
 /**
  * @author Freddy

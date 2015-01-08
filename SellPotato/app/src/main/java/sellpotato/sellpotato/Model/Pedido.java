@@ -1,4 +1,4 @@
-
+package sellpotato.sellpotato.Model;
 
 /**
  * @author Freddy
@@ -35,7 +35,7 @@ public class Pedido {
 	}
 
 	public String getFechaSolicitud(){
-		return FechaSolicitud;
+		return fechaSolicitud;
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class Pedido {
 	 * @param newVal
 	 */
 	public void setFechaSolicitud(String newVal){
-		FechaSolicitud = newVal;
+		fechaSolicitud = newVal;
 	}
 
 	public String getfechaEntrega(){
