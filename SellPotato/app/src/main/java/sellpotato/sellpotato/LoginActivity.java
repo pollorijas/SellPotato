@@ -62,7 +62,10 @@ public class LoginActivity extends Activity {
                 //verificar rut y pass en la base de datos aun no terminado se hablara mañana de esto
                 //tambien falta agregar los datos del cliente
                 Intent act = new Intent(this,Login_In.class);
-
+                act.putExtra("name","Freddy");
+                act.putExtra("apellido","Rojas");
+                act.putExtra("direccion","Wallis 2034");
+                act.putExtra("fono",String.valueOf(88945215));
                 startActivity(act);
                 finish();
             }

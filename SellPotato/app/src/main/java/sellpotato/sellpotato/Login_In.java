@@ -1,17 +1,27 @@
 package sellpotato.sellpotato;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
-public class Login_In extends ActionBarActivity {
+public class Login_In extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login__in);
+        Bundle e = getIntent().getExtras();
+        TextView t = (TextView)findViewById(R.id.l_nombre);
+        t.setText(e.getString("name"));
+        t = (TextView)findViewById(R.id.apellido_l);
+        t.setText(e.getString("apellido"));
+        t = (TextView)findViewById(R.id.fono_l);
+        t.setText(e.getString("fono"));
+        t = (TextView)findViewById(R.id.direccion_l);
+        t.setText(e.getString("direccion"));
     }
 
 //sdxzxzxzxz
