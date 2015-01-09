@@ -30,6 +30,18 @@
             android:name=".Login_In"
             android:label="@string/title_activity_login__in" >
         </activity>
+        <activity
+            android:name=".CrearPedido"
+            android:label="@string/title_activity_crear_pedido" >
+        </activity>
+        <activity
+            android:name=".VerPedido"
+            android:label="@string/title_activity_ver_pedido" >
+        </activity>
+        <activity
+            android:name=".CancelarPedido"
+            android:label="@string/title_activity_cancelar_pedido" >
+        </activity>
     </application>
 
 </manifest>

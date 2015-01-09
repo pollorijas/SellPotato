@@ -24,5 +24,8 @@
     <string name="pedidos">Pedidos</string>
     <string name="pagarPededos">Pagar Pedidos</string>
     <string name="salir">Salir</string>
+    <string name="title_activity_crear_pedido">CrearPedido</string>
+    <string name="title_activity_ver_pedido">VerPedido</string>
+    <string name="title_activity_cancelar_pedido">CancelarPedido</string>
 
 </resources>

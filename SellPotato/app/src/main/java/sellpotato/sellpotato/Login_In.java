@@ -3,6 +3,7 @@ package sellpotato.sellpotato;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -72,19 +73,24 @@ public class Login_In extends Activity {
 
     public void selecionarAcionPedido(View v)
     {
+        final Intent act = new Intent(this,CrearPedido.class);
+        final Intent act2 = new Intent(this,VerPedido.class);
+        final Intent act3 = new Intent(this,CancelarPedido.class);
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("Realizar Pedido");
         String cad[] = {"Crear Pedido","Ver Detalle Pedido","Cancelar Pedido"};
         dialog.setItems(cad, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                switch (which)
-                {
+                switch (which) {
                     case 0:
+                        startActivity(act);
                         break;
                     case 1:
+                        startActivity(act2);
                         break;
                     case 2:
+                        startActivity(act3);
                         break;
                 }
             }
