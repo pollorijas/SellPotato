@@ -72,7 +72,8 @@
                 android:text="@string/pagarPededos"
                 android:id="@+id/pagar"
                 android:background="#ffc5ff02"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:onClick="pagar" />
 
         </LinearLayout>
     </ScrollView>

@@ -42,6 +42,14 @@
             android:name=".CancelarPedido"
             android:label="@string/title_activity_cancelar_pedido" >
         </activity>
+        <activity
+            android:name=".PagoOnline"
+            android:label="@string/title_activity_pago_online" >
+        </activity>
+        <activity
+            android:name=".PagoContraEntrega"
+            android:label="@string/title_activity_pago_contra_entrega" >
+        </activity>
     </application>
 
 </manifest>

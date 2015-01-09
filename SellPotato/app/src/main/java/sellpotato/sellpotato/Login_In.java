@@ -97,4 +97,28 @@ public class Login_In extends Activity {
         });
         dialog.show();
     }
+
+    public void pagar(View v)
+    {
+        final Intent act = new Intent(this,PagoOnline.class);
+        final Intent act2 = new Intent(this,PagoContraEntrega.class);
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Selecionar Forma de Pago");
+        String cad[] = {"Pago Contra Entrega","Pago OnLine"};
+        dialog.setItems(cad, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0:
+                        act2.putExtra("Cliente",true);
+                        startActivity(act2);
+                        break;
+                    case 1:
+                        startActivity(act);
+                        break;
+                }
+            }
+        });
+        dialog.show();
+    }
 }

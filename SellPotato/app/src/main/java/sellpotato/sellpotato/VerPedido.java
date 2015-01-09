@@ -1,13 +1,13 @@
 package sellpotato.sellpotato;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import sellpotato.sellpotato.R;
 
-public class VerPedido extends ActionBarActivity {
+public class VerPedido extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

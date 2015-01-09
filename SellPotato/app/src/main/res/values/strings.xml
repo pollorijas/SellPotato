@@ -27,5 +27,7 @@
     <string name="title_activity_crear_pedido">CrearPedido</string>
     <string name="title_activity_ver_pedido">VerPedido</string>
     <string name="title_activity_cancelar_pedido">CancelarPedido</string>
+    <string name="title_activity_pago_online">PagoOnline</string>
+    <string name="title_activity_pago_contra_entrega">PagoContraEntrega</string>
 
 </resources>
