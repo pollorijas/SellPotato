@@ -67,7 +67,6 @@ public class LoginActivity extends Activity {
                 act.putExtra("direccion","Wallis 2034");
                 act.putExtra("fono",String.valueOf(88945215));
                 startActivity(act);
-                finish();
             }
             else{
                 AlertDialog.Builder dialog = new AlertDialog.Builder(this);

@@ -62,7 +62,9 @@
                 android:id="@+id/pedidos"
                 android:background="#ffc5ff02"
                 android:layout_marginTop="44dp"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:onClick="selecionarAcionPedido"
+                android:nestedScrollingEnabled="false" />
 
             <Button
                 android:layout_width="match_parent"
@@ -83,6 +85,7 @@
         android:layout_alignBottom="@+id/scrollView"
         android:layout_centerHorizontal="true"
         android:textSize="24sp"
-        android:background="#ffc5ff02" />
+        android:background="#ffc5ff02"
+        android:onClick="salir" />
 
 </RelativeLayout>
