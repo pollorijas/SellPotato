@@ -21,5 +21,7 @@
     <string name="r_telfono">Telefono</string>
     <string name="r_descripcion">Descripcion</string>
     <string name="title_activity_login__in">Login_In</string>
+    <string name="pedidos">Pedidos</string>
+    <string name="pagarPededos">Pagar Pedidos</string>
 
 </resources>

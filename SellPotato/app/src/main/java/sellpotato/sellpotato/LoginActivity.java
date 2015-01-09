@@ -60,6 +60,11 @@ public class LoginActivity extends Activity {
             if(HelpFuntion.validarRut(rut))
             {
                 //verificar rut y pass en la base de datos aun no terminado se hablara mañana de esto
+                //tambien falta agregar los datos del cliente
+                Intent act = new Intent(this,Login_In.class);
+
+                startActivity(act);
+                finish();
             }
             else{
                 AlertDialog.Builder dialog = new AlertDialog.Builder(this);
