@@ -1,23 +1,29 @@
 package sellpotato.sellpotato.Model;
 
+import java.io.Serializable;
+
+import sellpotato.sellpotato.Data.ClienteDB;
+
 /**
  * @author Freddy
  * @version 1.0
  * @created 08-ene-2015 19:29:24
  */
-public class Cliente extends Persona {
+public class Cliente extends Persona implements Serializable {
 
 	private String descripcionHogar;
 	private String direccion;
 	private double fono;
 	public Pedido m_Pedido;
 	public Ruta m_Ruta;
+    private ClienteDB clienteDB;
+    private String userType;
 
-	public Cliente(){
+    public Cliente(String rut, String pass) {
+        super(rut, pass);
+    }
 
-	}
-
-	public void finalize() throws Throwable {
+    public void finalize() throws Throwable {
 		super.finalize();
 	}
 	public String getdescripcionHogar(){
@@ -55,4 +61,18 @@ public class Cliente extends Persona {
 	public void setfono(double newVal){
 		fono = newVal;
 	}
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public void GetCliente()
+    {
+        this.clienteDB.getCliente(this);
+    }
+
 }//end Cliente

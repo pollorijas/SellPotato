@@ -11,11 +11,11 @@ public class Repartidor extends Persona {
 	private String licenciaConducir;
 	public Ruta m_Ruta;
 
-	public Repartidor(){
+    public Repartidor(String rut, String pass) {
+        super(rut, pass);
+    }
 
-	}
-
-	public void finalize() throws Throwable {
+    public void finalize() throws Throwable {
 		super.finalize();
 	}
 	public String getlicenciaConducir(){

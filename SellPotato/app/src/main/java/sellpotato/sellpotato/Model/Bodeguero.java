@@ -12,11 +12,11 @@ public class Bodeguero extends Persona {
 	private String direccionLocal;
 	private String nombreLocal;
 
-	public Bodeguero(){
+    public Bodeguero(String rut, String pass) {
+        super(rut, pass);
+    }
 
-	}
-
-	public void finalize() throws Throwable {
+    public void finalize() throws Throwable {
 		super.finalize();
 	}
 	public String getnombreLocal(){

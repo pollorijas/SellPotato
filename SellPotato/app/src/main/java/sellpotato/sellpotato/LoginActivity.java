@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import sellpotato.sellpotato.Model.Cliente;
 import sellpotato.sellpotato.helpclass.HelpFuntion;
 
 
@@ -59,13 +60,12 @@ public class LoginActivity extends Activity {
         {
             if(HelpFuntion.validarRut(rut))
             {
-                //verificar rut y pass en la base de datos aun no terminado se hablara mañana de esto
-                //tambien falta agregar los datos del cliente
+                String cad[] = rut.split("-");
+                rut = cad[0] + cad[1];
+                Cliente cliente =new Cliente(rut,pass);
+                cliente.GetCliente();
                 Intent act = new Intent(this,Login_In.class);
-                act.putExtra("name","Freddy");
-                act.putExtra("apellido","Rojas");
-                act.putExtra("direccion","Wallis 2034");
-                act.putExtra("fono",String.valueOf(88945215));
+                act.putExtra("Cliente",cliente);
                 startActivity(act);
             }
             else{

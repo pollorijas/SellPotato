@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import sellpotato.sellpotato.Model.Cliente;
+
 
 public class Login_In extends Activity {
 
@@ -18,14 +20,15 @@ public class Login_In extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login__in);
         Bundle e = getIntent().getExtras();
+        Cliente cliente = (Cliente) e.getSerializable("Cliente");
         TextView t = (TextView)findViewById(R.id.l_nombre);
-        t.setText(e.getString("name"));
+        t.setText(cliente.getnombre());
         t = (TextView)findViewById(R.id.apellido_l);
-        t.setText(e.getString("apellido"));
+        t.setText(cliente.getapellido());
         t = (TextView)findViewById(R.id.fono_l);
-        t.setText(e.getString("fono"));
+        t.setText(String.valueOf(cliente.getfono()));
         t = (TextView)findViewById(R.id.direccion_l);
-        t.setText(e.getString("direccion"));
+        t.setText(cliente.getdireccion());
     }
 
 //sdxzxzxzxz
