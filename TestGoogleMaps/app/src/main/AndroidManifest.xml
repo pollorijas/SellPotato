@@ -36,15 +36,16 @@
         <activity
             android:name=".PathGoogleMapActivity"
             android:label="@string/title_activity_path_google_map" >
-        </activity>
-        <activity
-            android:name=".GeocontrolActivity"
-            android:label="@string/title_activity_geocontrol" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".GeocontrolActivity"
+            android:label="@string/title_activity_geocontrol" >
+
         </activity>
     </application>
 
