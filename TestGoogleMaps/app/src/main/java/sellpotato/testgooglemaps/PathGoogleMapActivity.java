@@ -26,9 +26,8 @@ public class PathGoogleMapActivity extends FragmentActivity {
 	private static final LatLng WALL_STREET = new LatLng(-20.236066, -70.142968);
 
 	GoogleMap googleMap;
-	final String TAG = "PathGoogleMapActivity";
 
-	@Override
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_path_google_map);
@@ -57,8 +56,11 @@ public class PathGoogleMapActivity extends FragmentActivity {
 				+ BROOKLYN_BRIDGE.longitude + "|" + WALL_STREET.latitude + ","
 				+ WALL_STREET.longitude;
 
+        String origen = "origin=" + LOWER_MANHATTAN.latitude + "," + LOWER_MANHATTAN.longitude;
+        String destino = "destination=" + WALL_STREET.latitude + "," + WALL_STREET.longitude;
+
 		String sensor = "sensor=false";
-		String params = waypoints + "&" + sensor;
+		String params = origen + "&" + destino + "&" + waypoints + "&" + sensor;
 		String output = "json";
 		String url = "https://maps.googleapis.com/maps/api/directions/"
 				+ output + "?" + params;
@@ -118,7 +120,7 @@ public class PathGoogleMapActivity extends FragmentActivity {
 
 		@Override
 		protected void onPostExecute(List<List<HashMap<String, String>>> routes) {
-			ArrayList<LatLng> points = null;
+			ArrayList<LatLng> points;
 			PolylineOptions polyLineOptions = null;
 
 			// traversing through routes
@@ -139,7 +141,7 @@ public class PathGoogleMapActivity extends FragmentActivity {
 
 				polyLineOptions.addAll(points);
 				polyLineOptions.width(2);
-				polyLineOptions.color(Color.BLUE);
+				polyLineOptions.color(Color.RED);
 			}
 
 			googleMap.addPolyline(polyLineOptions);
