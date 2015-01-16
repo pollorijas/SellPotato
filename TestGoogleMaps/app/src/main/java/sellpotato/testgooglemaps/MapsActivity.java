@@ -25,7 +25,12 @@ public class MapsActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
-        setMarker("Terminal",terminal);
+
+        Bundle b = getIntent().getExtras();
+        Posicion a = (Posicion)b.getSerializable("waypoint");
+        LatLng punto = new LatLng(a.getLatitud(),a.getLongitud());
+        setMarker(a.getDireccion(),punto);
+        //setMarker("Terminal",terminal);
         drawLine(rutas);
     }
 

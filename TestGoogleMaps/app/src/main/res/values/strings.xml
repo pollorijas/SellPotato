@@ -4,5 +4,8 @@
     <string name="app_name">TestGoogleMaps</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_path_google_map">Map</string>
+    <string name="title_activity_geocontrol">GeocontrolActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

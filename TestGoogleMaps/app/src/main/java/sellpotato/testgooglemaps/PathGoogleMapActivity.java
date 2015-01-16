@@ -50,17 +50,14 @@ public class PathGoogleMapActivity extends FragmentActivity {
 	}
 
 	private String getMapsApiDirectionsUrl() {
-		String waypoints = "waypoints=optimize:true|"
-				+ LOWER_MANHATTAN.latitude + "," + LOWER_MANHATTAN.longitude
-				+ "|" + "|" + BROOKLYN_BRIDGE.latitude + ","
-				+ BROOKLYN_BRIDGE.longitude + "|" + WALL_STREET.latitude + ","
-				+ WALL_STREET.longitude;
+		String waypoints = "waypoints=optimize:true|" + BROOKLYN_BRIDGE.latitude + ","
+				+ BROOKLYN_BRIDGE.longitude;
 
         String origen = "origin=" + LOWER_MANHATTAN.latitude + "," + LOWER_MANHATTAN.longitude;
         String destino = "destination=" + WALL_STREET.latitude + "," + WALL_STREET.longitude;
 
 		String sensor = "sensor=false";
-		String params = origen + "&" + destino + "&" + waypoints + "&" + sensor;
+		String params = origen + "&" + destino + "&" + waypoints + "&" + "region=cl" + "&" + sensor;
 		String output = "json";
 		String url = "https://maps.googleapis.com/maps/api/directions/"
 				+ output + "?" + params;
