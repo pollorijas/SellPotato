@@ -1,12 +1,8 @@
 package com.example.maria.prueba1;
 
-import java.util.ArrayList;
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import com.example.maria.prueba1.library.Httppostaux;
+
+
+import com.example.maria.prueba1.capanegocio.LoginControler;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -30,7 +26,8 @@ public class login extends Activity {
     EditText pass;
     Button blogin;
     TextView registrar;
-    Httppostaux post;
+
+    LoginControler lc;
 
     // String URL_connect="http://www.scandroidtest.site90.com/acces.php";
     String IP_Server="http://bdremota.besaba.com";//IP DE NUESTRO PC
@@ -44,7 +41,8 @@ public class login extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        post=new Httppostaux();
+        //post=new Httppostaux();
+        lc = new LoginControler();
 
         user= (EditText) findViewById(R.id.edusuario);
         pass= (EditText) findViewById(R.id.edpassword);
@@ -59,7 +57,7 @@ public class login extends Activity {
                 String passw=pass.getText().toString();
 
                 //verificamos si estan en blanco
-                if( checklogindata( usuario , passw )==true){
+                if( checklogindata( usuario , passw )){
 
                     //si pasamos esa validacion ejecutamos el asynctask pasando el usuario y clave como parametros
 
@@ -68,6 +66,7 @@ public class login extends Activity {
                    // startActivity(nuevoform);
                 }else{
                     //si detecto un error en la primera validacion vibrar y mostrar un Toast con un mensaje de error.
+                    Log.e("Entra Aqui","NOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                     err_login();
                 }
 
@@ -97,57 +96,12 @@ public class login extends Activity {
     }
 
 
-    /*Valida el estado del logueo solamente necesita como parametros el usuario y passw*/
-    public boolean loginstatus(String username ,String password ) {
-        int logstatus=-1;
-
-    	/*Creamos un ArrayList del tipo nombre valor para agregar los datos recibidos por los parametros anteriores
-    	 * y enviarlo mediante POST a nuestro sistema para relizar la validacion*/
-        ArrayList<NameValuePair> postparameters2send= new ArrayList<NameValuePair>();
-
-        postparameters2send.add(new BasicNameValuePair("usuario",username));
-        postparameters2send.add(new BasicNameValuePair("password",password));
-
-        //realizamos una peticion y como respuesta obtenes un array JSON
-        JSONArray jdata=post.getserverdata(postparameters2send, URL_connect);
-
-      		/*como estamos trabajando de manera local el ida y vuelta sera casi inmediato
-      		 * para darle un poco realismo decimos que el proceso se pare por unos segundos para poder
-      		 * observar el progressdialog
-      		 * la podemos eliminar si queremos
-      		 */
-        SystemClock.sleep(950);
-
-        //si lo que obtuvimos no es null
-        if (jdata!=null && jdata.length() > 0){
-
-            JSONObject json_data; //creamos un objeto JSON
-            try {
-                json_data = jdata.getJSONObject(0); //leemos el primer segmento en nuestro caso el unico
-                logstatus=json_data.getInt("logstatus");//accedemos al valor
-                Log.e("loginstatus","logstatus= "+logstatus);//muestro por log que obtuvimos
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-            //validamos el valor obtenido
-            if (logstatus==0){// [{"logstatus":"0"}]
-                Log.e("loginstatus ", "invalido");
-                return false;
-            }
-            else{// [{"logstatus":"1"}]
-                Log.e("loginstatus ", "valido");
-                return true;
-            }
-
-        }else{	//json obtenido invalido verificar parte WEB.
-            Log.e("JSON  ", "ERROR");
-            return false;
-        }
-
+    public boolean LoginIn(String username, String password)
+    {
+        if(lc.LoginIn(username,password))
+            return true;
+        return false;
     }
-
 
     //validamos si no hay ningun campo en blanco
     public boolean checklogindata(String username ,String password ){
@@ -189,7 +143,7 @@ public class login extends Activity {
             pass=params[1];
 
             //enviamos y recibimos y analizamos los datos en segundo plano.
-            if (loginstatus(user,pass)==true){
+            if (LoginIn(user,pass)){
                 return "ok"; //login valido
             }else{
                 return "err"; //login invalido

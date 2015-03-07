@@ -52,16 +52,20 @@ public class InterfazRepartidor extends Activity {
                 // Toast.makeText(getApplicationContext(), "posicion " + (i + 1) + personas[i], Toast.LENGTH_SHORT).show();
                 switch (i) {
                     case 0:
-                        Intent ii = new Intent(getApplicationContext(), RegistrarProducto.class);
+                        Intent ii = new Intent(getApplicationContext(), IngresarCamion.class);
                         startActivity(ii);
                         break;
                     case 1:
-                        Intent im = new Intent(getApplicationContext(), GenerarPedido.class);
+                        Intent im = new Intent(getApplicationContext(), GenerarPago.class);
                         startActivity(im);
                         break;
                     case 2:
-                        Intent ip = new Intent(getApplicationContext(), ProcesarPedido.class);
+                        Intent ip = new Intent(getApplicationContext(), GenerarRecorrido.class);
                         startActivity(ip);
+                        break;
+                    case 3:
+                        Intent id = new Intent(getApplicationContext(), DistribucionPedido.class);
+                        startActivity(id);
                         break;
                 }
             }

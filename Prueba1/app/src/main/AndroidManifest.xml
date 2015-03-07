@@ -27,6 +27,17 @@
         <activity android:name=".ModificarCliente"></activity>
         <activity android:name=".GenerarPedido"></activity>
         <activity android:name=".IngresarCliente"></activity>
+        <activity android:name=".CancelarPedido"></activity>
+        <activity android:name=".DistribucionPedido"></activity>
+        <activity android:name=".GenerarPago"></activity>
+        <activity android:name=".GenerarPedido"></activity>
+        <activity android:name=".IngresarCamion"></activity>
+        <activity android:name=".IngresarPago"></activity>
+        <activity android:name=".ModificarPedido"></activity>
+        <activity android:name=".ModificarProducto"></activity>
+        <activity android:name=".ProcesarPedido"></activity>
+        <activity android:name=".RegistrarProducto"></activity>
+        <activity android:name=".VerPedido"></activity>
     </application>
     <uses-sdk android:minSdkVersion="8" />
     <uses-permission android:name="android.permission.INTERNET"/>

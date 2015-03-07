@@ -66,12 +66,23 @@ public class InterfazUsuario extends Activity {
                         Intent ig = new Intent(getApplicationContext(), GenerarPedido.class);
                         startActivity(ig);
                         break;
-                    default:
-                        Toast.makeText(getApplicationContext(), "posicion " + (i + 1) + usuario[i], Toast.LENGTH_SHORT).show();
+                    case 2:
+                        Intent ip = new Intent(getApplicationContext(), ModificarPedido.class);
+                        startActivity(ip);
+                        break;
+                    case 3:
+                        Intent iv = new Intent(getApplicationContext(), VerPedido.class);
+                        startActivity(iv);
+                        break;
+                    case 4:
+                        Intent ic = new Intent(getApplicationContext(), CancelarPedido.class);
+                        startActivity(ic);
+                        break;
+                    case 5: Intent ir = new Intent(getApplicationContext(), IngresarPago.class);
+                        startActivity(ir);
                         break;
                 }
             }
         });
     }
-
 }

@@ -3,21 +3,19 @@ package com.example.maria.prueba1;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.maria.prueba1.capanegocio.LoginControler;
 import com.example.maria.prueba1.library.Httppostaux;
 
 import org.apache.http.NameValuePair;
@@ -36,11 +34,13 @@ public class MainActivity extends ActionBarActivity {
     //Button registrar;
     TextView registrar;
     Httppostaux post;
+    LoginControler lc;
 
     // String URL_connect="http://www.scandroidtest.site90.com/acces.php";
     String IP_Server="http://bdsia2.besaba.com";//IP DE NUESTRO PC
     String URL_connect="http://bdsia2.besaba.com/loginbd/acces.php";//ruta en donde estan nuestros archivos
     public String tipo="";
+
 
     boolean result_back;
     private ProgressDialog pDialog;
@@ -51,6 +51,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         post=new Httppostaux();
+        lc = new LoginControler();
 
         user= (EditText) findViewById(R.id.edusuario);
         pass= (EditText) findViewById(R.id.edpassword);
@@ -105,6 +106,14 @@ public class MainActivity extends ActionBarActivity {
         toast1.show();
     }
 
+    public boolean LoginIn(String username, String password)
+    {
+        if(lc.LoginIn(username,password)) {
+            tipo = lc.getUserType();
+            return true;
+        }
+        return false;
+    }
 
     /*Valida el estado del logueo solamente necesita como parametros el usuario y passw*/
     public boolean loginstatus(String username ,String password ) {
@@ -201,7 +210,7 @@ public class MainActivity extends ActionBarActivity {
             pass=params[1];
 
             //enviamos y recibimos y analizamos los datos en segundo plano.
-            if (loginstatus(user,pass)==true){
+            if (LoginIn(user, pass)){
                 return "ok"; //login valido
             }else{
                 return "err"; //login invalido
@@ -217,16 +226,16 @@ public class MainActivity extends ActionBarActivity {
             pDialog.dismiss();//ocultamos progess dialog.
             Log.e("onPostExecute=",""+result);
 
-            if (result.equals("ok") && tipo.equals("Cliente")) {
+            if (result.equals("ok") && tipo.equals("CLIENTE")) {
 
                 Intent iu = new Intent(MainActivity.this, InterfazUsuario.class);
                 iu.putExtra("user", user);
                 startActivity(iu);
-            }else if(result.equals("ok") && tipo.equals("Bodeguero")) {
+            }else if(result.equals("ok") && tipo.equals("BODEGUERO")) {
                 Intent ib = new Intent(MainActivity.this, InterfazBodeguero.class);
                 ib.putExtra("user", user);
                 startActivity(ib);
-            }else if(result.equals("ok") && tipo.equals("Repartidor")){
+            }else if(result.equals("ok") && tipo.equals("REPARTIDOR")){
                 Intent ir = new Intent(MainActivity.this, InterfazRepartidor.class);
                 ir.putExtra("user", user);
                 startActivity(ir);
