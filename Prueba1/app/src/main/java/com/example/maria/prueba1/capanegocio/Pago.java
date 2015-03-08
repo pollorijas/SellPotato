@@ -10,7 +10,7 @@ public abstract class Pago {
 	private int total_pagar;
 	private String fechadePago;
 	private int id_Pago;
-	public Pedido m_Pedido;
+	private Pedido m_Pedido;
 
 	public Pago(){
 
@@ -54,4 +54,12 @@ public abstract class Pago {
 	public void setid_Pago(int newVal){
 		id_Pago = newVal;
 	}
+
+    public Pedido getM_Pedido() {
+        return m_Pedido;
+    }
+
+    public void setM_Pedido(Pedido m_Pedido) {
+        this.m_Pedido = m_Pedido;
+    }
 }//end Pago
