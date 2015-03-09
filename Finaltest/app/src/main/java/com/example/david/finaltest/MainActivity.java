@@ -1,5 +1,6 @@
 package com.example.david.finaltest;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.ActionBarActivity;
@@ -26,7 +27,7 @@ import java.io.IOException;
 public class MainActivity extends ActionBarActivity {
 
     EditText etrut, etnombre, etapellido, ettelefono, etdireccion, etdescripcion, etpassword;
-    Button btn_registrar, btn_consultar;
+    Button btn_registrar, btn_consultar, button;
     JSONArray ja;
     String data;
 
@@ -72,8 +73,9 @@ public class MainActivity extends ActionBarActivity {
         etpassword = (EditText)findViewById(R.id.et_password);
         btn_consultar = (Button)findViewById(R.id.btn_consultar);
         btn_registrar = (Button)findViewById(R.id.btn_registrar);
+        button = (Button)findViewById(R.id.button);
 
-        btn_registrar.setOnClickListener(new View.OnClickListener() {
+    btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
