@@ -1,0 +1,73 @@
+<<<<<<< Original
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.maria.prueba1" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".InterfazUsuario"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name=".InterfazBodeguero" />
+        <activity android:name=".InterfazRepartidor" >
+        </activity>
+        <activity android:name=".ModificarCliente" />
+        <activity android:name=".GenerarPedido" />
+        <activity android:name=".IngresarCliente" />
+        <activity android:name=".CancelarPedido" />
+        <activity android:name=".DistribucionPedido" />
+        <activity android:name=".GenerarPago" />
+        <activity android:name=".GenerarPedido" />
+        <activity android:name=".IngresarCamion" />
+        <activity android:name=".IngresarPago" />
+        <activity android:name=".ModificarPedido" />
+        <activity android:name=".ModificarProducto" />
+        <activity android:name=".ProcesarPedido" />
+        <activity android:name=".RegistrarProducto" />
+        <activity android:name=".VerPedido" />
+        <activity
+            android:name=".RegistrarProducto"
+            android:label="@string/title_activity_registrar_producto" >
+        </activity>
+    </application>
+
+</manifest>
+
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity android:name="com.example.maria.prueba1.RegistrarProducto"
+            android:label="@string/title_activity_registrar_producto"
+            >
+        </activity>
+    </application>
+
+</manifest>
+>>>>>>> Added
