@@ -51,8 +51,8 @@ public class InterfazBodeguero extends Activity {
                 // Toast.makeText(getApplicationContext(), "posicion " + (i + 1) + personas[i], Toast.LENGTH_SHORT).show();
                 switch (i) {
                     case 0:
-                        Intent ii = new Intent(getApplicationContext(), RegistrarProducto.class);
-                        startActivity(ii);
+                        //Intent ii = new Intent(getApplicationContext(), RegistrarProducto.class);
+                        //startActivity(ii);
                         break;
                     case 1:
                         Intent im = new Intent(getApplicationContext(), GenerarPedido.class);
