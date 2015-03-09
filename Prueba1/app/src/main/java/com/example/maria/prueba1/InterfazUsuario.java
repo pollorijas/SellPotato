@@ -1,21 +1,17 @@
 package com.example.maria.prueba1;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-/**
- * Created by Maria on 14/01/2015.
- */
+import com.example.maria.prueba1.capanegocio.ClienteControler;
+
 public class InterfazUsuario extends Activity {
     String user;
     ListView lista;
@@ -28,10 +24,15 @@ public class InterfazUsuario extends Activity {
             "Cancelar Pedido",
             "Realizar Pago"
     };
+    ClienteControler controler;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.interfaz_usuario);
+
+        controler = ClienteControler.getInstance();
+        Log.e("Prueba Ingreso Usuario", "Usuario Registrado es: " + controler.getCliente().getnombre());
 
         Bundle extras = getIntent().getExtras();
         //Obtenemos datos enviados en el intent.
@@ -46,6 +47,7 @@ public class InterfazUsuario extends Activity {
         logoff.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 //'cerrar  sesion' nos regresa a la ventana anterior.
+
                 finish();
             }
         });
@@ -56,7 +58,6 @@ public class InterfazUsuario extends Activity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView adapterView, View view, int i, long l) {
-                // Toast.makeText(getApplicationContext(), "posicion " + (i + 1) + personas[i], Toast.LENGTH_SHORT).show();
                 switch (i) {
                     case 0:
                         Intent im = new Intent(getApplicationContext(), ModificarCliente.class);

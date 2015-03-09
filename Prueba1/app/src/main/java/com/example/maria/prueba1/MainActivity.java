@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.maria.prueba1.capanegocio.ClienteControler;
 import com.example.maria.prueba1.capanegocio.LoginControler;
 import com.example.maria.prueba1.library.Httppostaux;
 
@@ -35,6 +36,7 @@ public class MainActivity extends ActionBarActivity {
     TextView registrar;
     Httppostaux post;
     LoginControler lc;
+    ClienteControler controler;
 
     // String URL_connect="http://www.scandroidtest.site90.com/acces.php";
     String IP_Server="http://bdsia2.besaba.com";//IP DE NUESTRO PC
@@ -84,17 +86,6 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(ri);
                 }
         });
-       // registrar.setOnClickListener(new View.OnClickListener(){
-
-         //   public void onClick(View view){
-
-                //Abre el navegador al formulario adduser.html
-           //     String url = "http://"+IP_Server+"/loginbd/adduser.html";
-             //   Intent i = new Intent(Intent.ACTION_VIEW);
-               // i.setData(Uri.parse(url));
-              //  startActivity(i);
-           // }
-       // });
 
     }
 
@@ -227,6 +218,11 @@ public class MainActivity extends ActionBarActivity {
             Log.e("onPostExecute=",""+result);
 
             if (result.equals("ok") && tipo.equals("CLIENTE")) {
+
+                //Creacion del Controlador de Cliente
+                //Es static y singleton asi se podra usar sin ningun problema en la otra activity
+                controler = ClienteControler.getInstance();
+                controler.setCliente(lc.getCliente());
 
                 Intent iu = new Intent(MainActivity.this, InterfazUsuario.class);
                 iu.putExtra("user", user);

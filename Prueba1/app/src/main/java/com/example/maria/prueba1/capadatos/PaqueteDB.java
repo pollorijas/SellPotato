@@ -12,7 +12,7 @@ public class PaqueteDB implements BDInterface {
         String aux = "ERROR";
         if(t instanceof Paquete)
         {
-            //Arreglear SQL de PRODUCTO
+            //Arreglear SQL de PAQUETE
             HttpHelpingClass http = new HttpHelpingClass();
             try {
                 http.httpGetData("http://vendepapas.esy.es/SQL/paquete_registro.php?id=" + ((Paquete) t).getidPaquete());
@@ -34,7 +34,22 @@ public class PaqueteDB implements BDInterface {
 
     @Override
     public <T> String Delete(T t) {
-        return null;
+        String aux = "ERROR";
+        if(t instanceof Paquete)
+        {
+            //Arreglear SQL de PAQUETE
+            HttpHelpingClass http = new HttpHelpingClass();
+            try {
+                http.httpGetData("http://vendepapas.esy.es/SQL/paquete_eliminar.php?id=" + ((Paquete) t).getidPaquete());
+                aux = "SUCCESSFUL";
+            }catch (Exception e)
+            {
+                e.printStackTrace();
+                return "ERROR";
+            }
+
+        }
+        return aux;
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.example.maria.prueba1.capanegocio;
 
+import com.example.maria.prueba1.capadatos.ClienteDB;
+
 /**
  * @author Freddy
  * @version 1.0
@@ -12,14 +14,15 @@ public class Cliente extends Persona {
 	private double fono;
 	public Pedido m_Pedido;
 	public Ruta m_Ruta;
+    private ClienteDB clienteDB;
 
 	public Cliente(){
-
+        clienteDB = new ClienteDB();
 	}
 
     public Cliente(String nombre,String apellido, String rut, String descripcionHogar, String direccion, double fono)
     {
-
+        clienteDB = new ClienteDB();
         this.setnombre(nombre);
         this.setapellido(apellido);
         this.setrut(rut);
