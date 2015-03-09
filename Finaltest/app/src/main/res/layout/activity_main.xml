@@ -28,8 +28,7 @@
         android:layout_below="@+id/titulo"
         android:layout_toRightOf="@+id/lblrut"
         android:layout_alignTop="@+id/lblrut"
-        android:id="@+id/et_rut"
-        android:phoneNumber="true" />
+        android:id="@+id/et_rut"/>
 
     <TextView
         android:id="@+id/lblnombre"
@@ -45,8 +44,7 @@
         android:layout_below="@+id/et_rut"
         android:layout_toRightOf="@+id/lblnombre"
         android:layout_alignTop="@+id/lblnombre"
-        android:id="@+id/et_nombre"
-        android:phoneNumber="false" />
+        android:id="@+id/et_nombre"/>
 
     <TextView    android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -141,15 +139,6 @@
         android:layout_below="@+id/et_password"
         android:layout_toRightOf="@+id/btn_consultar"
         android:id="@+id/btn_registrar"/>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Activity"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
 
