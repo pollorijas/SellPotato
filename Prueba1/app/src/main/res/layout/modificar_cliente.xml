@@ -8,6 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:text="Modiciar Cliente"
         android:id="@+id/textView5" />
@@ -75,4 +76,9 @@
         android:enabled="true"
         android:nestedScrollingEnabled="true" />
 
+=======
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Modiciar Cliente"
+        android:id="@+id/textView5" />
+>>>>>>> parent of 117a176... Modificar cliente interfaz
 </LinearLayout>
