@@ -9,8 +9,9 @@ public class DetallePedido {
 
 	private int cantidadVedida;
 	private int precioVenta;
-	public Producto m_Producto;
-	public Pedido m_Pedido;
+    private int id_detalle;
+	private Producto m_Producto;
+    private Pedido m_Pedido;
 
 	public DetallePedido(){
 
@@ -42,4 +43,28 @@ public class DetallePedido {
 	public void setrecioVenta(int newVal){
 		precioVenta = newVal;
 	}
+
+    public int getId_detalle() {
+        return id_detalle;
+    }
+
+    public void setId_detalle(int id_detalle) {
+        this.id_detalle = id_detalle;
+    }
+
+    public Producto getM_Producto() {
+        return m_Producto;
+    }
+
+    public void setM_Producto(Producto m_Producto) {
+        this.m_Producto = m_Producto;
+    }
+
+    public Pedido getM_Pedido() {
+        return m_Pedido;
+    }
+
+    public void setM_Pedido(Pedido m_Pedido) {
+        this.m_Pedido = m_Pedido;
+    }
 }//end DetallePedido
