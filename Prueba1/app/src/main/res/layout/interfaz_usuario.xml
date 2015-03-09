@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/usario_interfaz"
+    android:weightSum="1"
+    android:background="#fff5e90d">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesion"
+        android:id="@+id/logoff"
+        android:layout_gravity="right"
+        android:textColor="#fff51311"
+        android:textIsSelectable="false" />
+
+    <ImageView
+        android:layout_width="167dp"
+        android:layout_height="208dp"
+        android:id="@+id/imageView3"
+        android:src="@drawable/sellpotato" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="343dp"
+        android:id="@+id/listView1"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.06" />
+</LinearLayout>
