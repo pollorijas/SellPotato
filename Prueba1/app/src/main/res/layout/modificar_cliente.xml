@@ -22,7 +22,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="number|textNoSuggestions"
         android:ems="10"
         android:id="@+id/editText" />
 
@@ -36,6 +36,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textNoSuggestions"
         android:id="@+id/editText" />
 
     <TextView
@@ -53,14 +54,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:text="Password|textNoSuggestions"
         android:id="@+id/textView28"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:inputType="textPassword|textNoSuggestions"
         android:ems="10"
         android:id="@+id/editText" />
 

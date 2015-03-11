@@ -48,6 +48,7 @@ public class LoginControler {
 
         UserType = controlerDB.getUser(user, pass);
 
+
         Log.e("UserType","User Type: " + UserType);
 
         if(UserType.equals("CLIENTE"))
@@ -71,10 +72,41 @@ public class LoginControler {
         else{
            if(UserType.equals("BODEGUERO"))
            {
+               bodeguero = new Bodeguero();
+               bodeguero.setrut(user);
+               bodeguero.setPassword(pass);
 
+               bodegueroDB = new BodegueroDB();
+
+               bodegueroDB.Get(bodeguero);
+               if(bodeguero == null){
+                   Log.e("Respuesta","Cliente no Encontrado");
+                   return false;
+               }
+               else {
+                   Log.e("Respuesta","Cliente Encontrado");
+                   return true;
+               }
            }
            else{
+               if(UserType.equals("REPARTIDOR"))
+               {
+                   repartidor = new Repartidor();
+                   repartidor.setrut(user);
+                   repartidor.setPassword(pass);
 
+                   repartidorDB = new RepartidorDB();
+
+                   repartidorDB.Get(repartidor);
+                   if(repartidor == null){
+                       Log.e("Respuesta","Cliente no Encontrado");
+                       return false;
+                   }
+                   else {
+                       Log.e("Respuesta","Cliente Encontrado");
+                       return true;
+                   }
+               }
            }
         }
 
