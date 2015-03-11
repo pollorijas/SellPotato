@@ -1,109 +1,146 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#fff5e90d"
-    android:weightSum="1">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#fff5e90d">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:text="Modiciar Cliente"
-        android:id="@+id/textView5" />
+        android:text="Registro de Usuario"
+        android:gravity="center"
+        android:textSize="30px"
+        android:id="@+id/titulo"
+        />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/lblrut"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Telefono"
-        android:id="@+id/textView28"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+        android:layout_below="@+id/titulo"
+        android:layout_marginTop="20dp"
+        android:text="Rut:" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        android:inputType="number|textNoSuggestions"
-=======
-        android:inputType="number"
->>>>>>> parent of 2330829... mod cli
-=======
-        android:inputType="number"
->>>>>>> parent of 2330829... mod cli
-        android:ems="10"
-        android:id="@+id/editText" />
+        android:layout_below="@+id/titulo"
+        android:layout_toRightOf="@+id/lblrut"
+        android:layout_alignTop="@+id/lblrut"
+        android:id="@+id/et_rut"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/lblnombre"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Dirección"
-        android:id="@+id/textView28"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+        android:layout_below="@+id/et_rut"
+        android:layout_marginTop="20dp"
+        android:text="Nombre" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        android:inputType="textNoSuggestions"
-=======
->>>>>>> parent of 2330829... mod cli
-=======
->>>>>>> parent of 2330829... mod cli
-        android:id="@+id/editText" />
+        android:layout_below="@+id/et_rut"
+        android:layout_toRightOf="@+id/lblnombre"
+        android:layout_alignTop="@+id/lblnombre"
+        android:id="@+id/et_nombre"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <TextView    android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Descripción Hogar"
-        android:id="@+id/textView28"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+        android:text="Apellido:"
+        android:layout_below="@+id/et_nombre"
+        android:layout_marginTop="20dp"
+        android:id="@+id/lblapellido"
+        />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText" />
+        android:layout_below="@+id/et_nombre"
+        android:layout_toRightOf="@+id/lblapellido"
+        android:layout_alignTop="@+id/lblapellido"
+        android:id="@+id/et_apellido"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <TextView    android:layout_width="100dp"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        android:text="Password|textNoSuggestions"
-=======
-        android:text="Password"
->>>>>>> parent of 2330829... mod cli
-=======
-        android:text="Password"
->>>>>>> parent of 2330829... mod cli
-        android:id="@+id/textView28"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+        android:text="Teléfono:"
+        android:layout_below="@+id/et_apellido"
+        android:layout_marginTop="20dp"
+        android:id="@+id/lbltelefono"
+        />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        android:inputType="textPassword|textNoSuggestions"
-=======
-        android:inputType="textPassword"
->>>>>>> parent of 2330829... mod cli
-=======
-        android:inputType="textPassword"
->>>>>>> parent of 2330829... mod cli
-        android:ems="10"
-        android:id="@+id/editText" />
+        android:layout_below="@+id/et_apellido"
+        android:layout_toRightOf="@+id/lbltelefono"
+        android:layout_alignTop="@+id/lbltelefono"
+        android:id="@+id/et_telefono"/>
 
-    <Button
-        android:layout_width="wrap_content"
+    <TextView    android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Modificar"
-        android:id="@+id/button"
-        android:layout_gravity="center_horizontal"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:clickable="false"
-        android:enabled="true"
-        android:nestedScrollingEnabled="true" />
+        android:text="DIrección:"
+        android:layout_below="@+id/et_telefono"
+        android:layout_marginTop="20dp"
+        android:id="@+id/lbldireccion"
+        />
 
-</LinearLayout>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_telefono"
+        android:layout_toRightOf="@+id/lbldireccion"
+        android:layout_alignTop="@+id/lbldireccion"
+        android:id="@+id/et_direccion"/>
+
+    <TextView    android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Descripción:"
+        android:layout_below="@+id/et_direccion"
+        android:layout_marginTop="20dp"
+        android:id="@+id/lbldescripcion"
+        />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_direccion"
+        android:layout_toRightOf="@+id/lbldescripcion"
+        android:layout_alignTop="@+id/lbldescripcion"
+        android:id="@+id/et_descripcion"/>
+
+    <TextView    android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Password:"
+        android:layout_below="@+id/et_descripcion"
+        android:layout_marginTop="20dp"
+        android:id="@+id/lblpassword"
+        />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_descripcion"
+        android:layout_toRightOf="@+id/lblpassword"
+        android:layout_alignTop="@+id/lblpassword"
+        android:id="@+id/et_password"/>
+
+
+    <Button android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Consultar"
+        android:layout_below="@+id/et_password"
+        android:id="@+id/btn_consultar"/>
+
+    <Button android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        android:layout_below="@+id/et_password"
+        android:layout_toRightOf="@+id/btn_consultar"
+        android:id="@+id/btn_modificar"/>
+
+
+</RelativeLayout>
+
