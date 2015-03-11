@@ -23,7 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:inputType="number|textNoSuggestions"
+=======
+        android:inputType="number"
+>>>>>>> parent of 2330829... mod cli
 =======
         android:inputType="number"
 >>>>>>> parent of 2330829... mod cli
@@ -41,7 +45,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:inputType="textNoSuggestions"
+=======
+>>>>>>> parent of 2330829... mod cli
 =======
 >>>>>>> parent of 2330829... mod cli
         android:id="@+id/editText" />
@@ -62,7 +69,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:text="Password|textNoSuggestions"
+=======
+        android:text="Password"
+>>>>>>> parent of 2330829... mod cli
 =======
         android:text="Password"
 >>>>>>> parent of 2330829... mod cli
@@ -73,7 +84,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:inputType="textPassword|textNoSuggestions"
+=======
+        android:inputType="textPassword"
+>>>>>>> parent of 2330829... mod cli
 =======
         android:inputType="textPassword"
 >>>>>>> parent of 2330829... mod cli
