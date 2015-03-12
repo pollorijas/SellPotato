@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ public class MainActivity extends ActionBarActivity {
     EditText user;
     EditText pass;
     Button blogin;
+    TextView link;
+
     //Button registrar;
     TextView registrar;
     Httppostaux post;
@@ -58,7 +61,9 @@ public class MainActivity extends ActionBarActivity {
         user= (EditText) findViewById(R.id.edusuario);
         pass= (EditText) findViewById(R.id.edpassword);
         blogin= (Button) findViewById(R.id.Blogin);
-        registrar = (Button) findViewById(R.id.Bregistrar);
+       // registrar = (Button) findViewById(R.id.Bregistrar);
+        link = (TextView)findViewById(R.id.link);
+
 
         //Login button action
         blogin.setOnClickListener(new View.OnClickListener(){
@@ -80,7 +85,7 @@ public class MainActivity extends ActionBarActivity {
         });
 
 
-        registrar.setOnClickListener(new View.OnClickListener(){
+        link.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View view){
                 Intent ri = new Intent(getApplicationContext(), IngresarCliente.class);
                 startActivity(ri);
@@ -224,8 +229,11 @@ public class MainActivity extends ActionBarActivity {
                 controler = ClienteControler.getInstance();
                 controler.setCliente(lc.getCliente());
 
+                Log.e("Vista","Cliente: " + controler.getCliente().getnombre());
+
                 Intent iu = new Intent(MainActivity.this, InterfazUsuario.class);
                 iu.putExtra("user", user);
+                //iu.putExtra("cliente",controler);
                 startActivity(iu);
             }else if(result.equals("ok") && tipo.equals("BODEGUERO")) {
                 Intent ib = new Intent(MainActivity.this, InterfazBodeguero.class);

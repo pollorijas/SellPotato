@@ -23,7 +23,7 @@ public class RepartidorDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
             try
             {
-                http.httpGetData("http://vendepapas.esy.es/SQL/repartidor_registro.php?rut=" + ((Repartidor) t).getrut()
+                http.httpGetData("http://10.0.2.2/SSPP/repartidor_registro.php?rut=" + ((Repartidor) t).getrut()
                 + "&nombre=" + ((Repartidor) t).getnombre()
                 + "&apellido=" + ((Repartidor) t).getapellido()
                 + "&licencia=" + ((Repartidor) t).getlicenciaConducir()
@@ -46,7 +46,7 @@ public class RepartidorDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
             try
             {
-                http.httpGetData("http://vendepapas.esy.es/SQL/repartidor_actualizar.php?rut=" + ((Repartidor) t).getrut()
+                http.httpGetData("http://10.0.2.2/SSPP/repartidor_actualizar.php?rut=" + ((Repartidor) t).getrut()
                         + "&licencia=" + ((Repartidor) t).getlicenciaConducir()
                         + "&estado=" + ((Repartidor) t).getestado()
                         + "&password=" + ((Repartidor) t).getPassword());
@@ -67,7 +67,7 @@ public class RepartidorDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
             try
             {
-                http.httpGetData("http://vendepapas.esy.es/SQL/repartidor_reliminar.php?rut=" + ((Repartidor) t).getrut());
+                http.httpGetData("http://10.0.2.2/SSPP/repartidor_reliminar.php?rut=" + ((Repartidor) t).getrut());
                 aux = "SUCCESSFUL";
             }catch(Exception e)
             {
@@ -84,7 +84,7 @@ public class RepartidorDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
 
             ja = null;
-            data = http.httpGetData("http://vendepapas.esy.es/SQL/repartidor_buscar.php?rut=" + ((Repartidor) t).getrut());
+            data = http.httpGetData("http://10.0.2.2/SSPP/repartidor_buscar.php?rut=" + ((Repartidor) t).getrut());
             if (data.length()>0){
                 try {
                     ja= new JSONArray(data);

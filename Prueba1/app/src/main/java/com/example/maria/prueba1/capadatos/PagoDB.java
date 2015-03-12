@@ -14,7 +14,7 @@ public class PagoDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/pago_registrar.php?id_pago=" + ((Pago) t).getid_Pago()
+                http.httpGetData("http://10.0.2.2/SSPP/pago_registrar.php?id_pago=" + ((Pago) t).getid_Pago()
                         + "&id_pedido=" + ((Pago) t).getM_Pedido().getidPedido()
                         + "&forma_pago=" + "Arregla Forma de Pago"
                         + "&fecha_pago" + ((Pago) t).getfechadePago()
@@ -35,7 +35,7 @@ public class PagoDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/pago_actualizar.php?id_pago=" + ((Pago) t).getid_Pago()
+                http.httpGetData("http://10.0.2.2/SSPP/pago_actualizar.php?id_pago=" + ((Pago) t).getid_Pago()
                         + "&id_pedido=" + ((Pago) t).getM_Pedido().getidPedido()
                         + "&forma_pago=" + "Arregla Forma de Pago"
                         + "&fecha_pago" + ((Pago) t).getfechadePago()

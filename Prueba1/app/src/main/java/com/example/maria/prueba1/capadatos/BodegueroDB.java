@@ -22,7 +22,7 @@ public class BodegueroDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/bodeguero_registro.php?rut=" + ((Bodeguero) t).getrut()
+                http.httpGetData("http://10.0.2.2/SSPP/bodeguero_registro.php?rut=" + ((Bodeguero) t).getrut()
                 + "&nombre=" + ((Bodeguero) t).getnombre()
                 + "&apellido=" + ((Bodeguero) t).getapellido()
                 + "&direccion_local" + ((Bodeguero) t).getdireccionLocal()
@@ -46,7 +46,7 @@ public class BodegueroDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/bodeguero_registro.php?rut=" + ((Bodeguero) t).getrut()
+                http.httpGetData("http://10.0.2.2/SSPP/bodeguero_registro.php?rut=" + ((Bodeguero) t).getrut()
                         + "&direccion_local" + ((Bodeguero) t).getdireccionLocal()
                         + "&nombre_local=" + ((Bodeguero) t).getnombreLocal()
                         + "&password=" + ((Bodeguero) t).getPassword());
@@ -68,7 +68,7 @@ public class BodegueroDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/bodeguero_registro.php?rut=" + ((Bodeguero) t).getrut());
+                http.httpGetData("http://10.0.2.2/SSPP/bodeguero_registro.php?rut=" + ((Bodeguero) t).getrut());
                 aux = "SUCCESSFUL";
             }catch (Exception e)
             {
@@ -87,7 +87,7 @@ public class BodegueroDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
 
             ja = null;
-            data = http.httpGetData("http://vendepapas.esy.es/SQL/bodeguero_buscar.php?rut=" + ((Bodeguero) t).getrut());
+            data = http.httpGetData("http://10.0.2.2/SSPP/bodeguero_buscar.php?rut=" + ((Bodeguero) t).getrut());
             if (data.length()>0){
                 try {
                     ja= new JSONArray(data);

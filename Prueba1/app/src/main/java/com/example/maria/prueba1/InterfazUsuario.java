@@ -31,10 +31,13 @@ public class InterfazUsuario extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.interfaz_usuario);
 
-        controler = ClienteControler.getInstance();
-        Log.e("Prueba Ingreso Usuario", "Usuario Registrado es: " + controler.getCliente().getnombre());
-
         Bundle extras = getIntent().getExtras();
+
+        //controler = (ClienteControler)extras.getSerializable("cliente");
+        //controler = ClienteControler.getInstance();
+        //Log.e("Prueba Ingreso Usuario", "Usuario Registrado es: " + controler.getCliente().getnombre());
+
+
         //Obtenemos datos enviados en el intent.
         if (extras != null) {
             user  = extras.getString("user");//usuario

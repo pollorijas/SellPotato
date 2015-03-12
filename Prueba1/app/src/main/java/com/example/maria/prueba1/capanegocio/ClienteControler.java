@@ -4,12 +4,13 @@ import com.example.maria.prueba1.capadatos.DetallePedidoDB;
 import com.example.maria.prueba1.capadatos.PedidoDB;
 import com.example.maria.prueba1.capadatos.ProductoDB;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Freddy on 09-03-2015.
  */
-public class ClienteControler {
+public class ClienteControler{
 
     private static ClienteControler instance;
     private Cliente cliente;

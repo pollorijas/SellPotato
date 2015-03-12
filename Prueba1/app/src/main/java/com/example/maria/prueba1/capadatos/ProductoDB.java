@@ -15,7 +15,7 @@ public class ProductoDB implements BDInterface {
             //Arreglear SQL de PRODUCTO
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/producto_registro.php?id_producto=" + ((Producto) t).getidProducto()
+                http.httpGetData("http://10.0.2.2/SSPP/producto_registro.php?id_producto=" + ((Producto) t).getidProducto()
                 + "&nombre_producto=" + ((Producto) t).getnombreProducto()
                 + "&precio_unitario=" + ((Producto) t).getprecio()
                 + "&descripcion_producto=" + ((Producto) t).getdescripcion()
@@ -39,7 +39,7 @@ public class ProductoDB implements BDInterface {
             //Arreglear SQL de PRODUCTO
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/producto_actualizar.php?id_producto=" + ((Producto) t).getidProducto()
+                http.httpGetData("http://10.0.2.2/SSPP/producto_actualizar.php?id_producto=" + ((Producto) t).getidProducto()
                         + "&nombre_producto=" + ((Producto) t).getnombreProducto()
                         + "&precio_unitario=" + ((Producto) t).getprecio()
                         + "&descripcion_producto=" + ((Producto) t).getdescripcion()
@@ -63,7 +63,7 @@ public class ProductoDB implements BDInterface {
             //Arreglear SQL de PRODUCTO
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/producto_eliminar.php?id_producto=" + ((Producto) t).getidProducto());
+                http.httpGetData("http://10.0.2.2/SSPP/producto_eliminar.php?id_producto=" + ((Producto) t).getidProducto());
                 aux = "SUCCESSFUL";
             }catch (Exception e)
             {

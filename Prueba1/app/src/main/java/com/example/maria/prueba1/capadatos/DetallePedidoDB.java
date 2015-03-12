@@ -14,7 +14,7 @@ public class DetallePedidoDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/detalle_pedido_registro.php?id_detalle=" + ((DetallePedido) t).getId_detalle()
+                http.httpGetData("http://10.0.2.2/SSPP/detalle_pedido_registro.php?id_detalle=" + ((DetallePedido) t).getId_detalle()
                 + "&id_pedido=" + ((DetallePedido) t).getM_Pedido().getidPedido()
                 + "&id_producto=" + ((DetallePedido) t).getM_Producto().getidProducto()
                 + "&cantidad_vendida=" + ((DetallePedido) t).getcantidadVedida()
@@ -37,7 +37,7 @@ public class DetallePedidoDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/detalle_pedido_actualizar.php?id_detalle=" + ((DetallePedido) t).getId_detalle()
+                http.httpGetData("http://10.0.2.2/SSPP/detalle_pedido_actualizar.php?id_detalle=" + ((DetallePedido) t).getId_detalle()
                         + "&id_pedido=" + ((DetallePedido) t).getM_Pedido().getidPedido()
                         + "&id_producto=" + ((DetallePedido) t).getM_Producto().getidProducto()
                         + "&cantidad_vendida=" + ((DetallePedido) t).getcantidadVedida()
@@ -60,7 +60,7 @@ public class DetallePedidoDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/detalle_pedido_eliminar.php?id_detalle=" + ((DetallePedido) t).getId_detalle());
+                http.httpGetData("http://10.0.2.2/SSPP/detalle_pedido_eliminar.php?id_detalle=" + ((DetallePedido) t).getId_detalle());
                 aux = "SUCCESSFUL";
             }catch (Exception e)
             {

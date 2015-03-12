@@ -22,7 +22,7 @@ public class CamionDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/camion_registrar.php?patente=" + ((Camion) t).getpatente()
+                http.httpGetData("http://10.0.2.2/SSPP/camion_registrar.php?patente=" + ((Camion) t).getpatente()
                 + "&rut=" + ((Camion) t).getM_Repartidor().getrut()
                 + "&marca=" + ((Camion) t).getmarca()
                 + "&modelo=" + ((Camion) t).getmodelo()
@@ -45,7 +45,7 @@ public class CamionDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/camion_atualizar.php?patente=" + ((Camion) t).getpatente()
+                http.httpGetData("http://10.0.2.2/SSPP/camion_atualizar.php?patente=" + ((Camion) t).getpatente()
                         + "&rut=" + ((Camion) t).getM_Repartidor().getrut()
                         + "&marca=" + ((Camion) t).getmarca()
                         + "&modelo=" + ((Camion) t).getmodelo()
@@ -68,7 +68,7 @@ public class CamionDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/camion_eliminar.php?patente=" + ((Camion) t).getpatente());
+                http.httpGetData("http://10.0.2.2/SSPP/camion_eliminar.php?patente=" + ((Camion) t).getpatente());
                 aux="SUCCESSFUL";
             }catch(Exception e)
             {
@@ -86,7 +86,7 @@ public class CamionDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
 
             ja = null;
-            data = http.httpGetData("http://vendepapas.esy.es/SQL/camion_buscar.php?patente=" + ((Camion) t).getpatente());
+            data = http.httpGetData("http://10.0.2.2/SSPP/camion_buscar.php?patente=" + ((Camion) t).getpatente());
             if (data.length()>0){
                 try {
                     ja= new JSONArray(data);

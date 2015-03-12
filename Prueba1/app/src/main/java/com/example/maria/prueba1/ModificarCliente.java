@@ -28,7 +28,7 @@ public class ModificarCliente extends ActionBarActivity {
 
     EditText etrut, etnombre, etapellido, ettelefono, etdireccion, etdescripcion, etpassword;
     TextView jaja;
-    Button btn_registrar, btn_consultar;
+    Button btn_modificar, btn_consultar;
     JSONArray ja;
     String data;
 
@@ -47,6 +47,7 @@ public class ModificarCliente extends ActionBarActivity {
             super.handleMessage(msg);
 
             try {
+                //jaja.setText(ja.getString(0));
                 etrut.setText(ja.getString(0));
                 etnombre.setText(ja.getString(1));
                 etapellido.setText(ja.getString(2));
@@ -65,6 +66,7 @@ public class ModificarCliente extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modificar_cliente);
 
+
         etrut = (EditText)findViewById(R.id.et_rut);
         etnombre = (EditText)findViewById(R.id.et_nombre);
         etapellido = (EditText)findViewById(R.id.et_apellido);
@@ -73,9 +75,10 @@ public class ModificarCliente extends ActionBarActivity {
         etdescripcion = (EditText)findViewById(R.id.et_descripcion);
         etpassword = (EditText)findViewById(R.id.et_password);
         btn_consultar = (Button)findViewById(R.id.btn_consultar);
-        btn_registrar = (Button)findViewById(R.id.btn_registrar);
+        btn_modificar = (Button)findViewById(R.id.btn_modificar);
+        //jaja = (TextView)findViewById(R.id.jaja);
 
-        btn_registrar.setOnClickListener(new View.OnClickListener() {
+        btn_modificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -98,7 +101,7 @@ public class ModificarCliente extends ActionBarActivity {
                     public void run() {
 
                         ja = null;
-                        data = httpGetData("http://10.0.2.2/SSPP/consulta.php?rut="+etrut.getText());
+                        data = httpGetData("http://10.0.2.2/SSPP/cliente_buscar.php?rut="+etrut.getText());
                         if (data.length()>0){
                             try {
                                 ja= new  JSONArray(data);

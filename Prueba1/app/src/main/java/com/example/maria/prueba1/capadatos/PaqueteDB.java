@@ -15,7 +15,7 @@ public class PaqueteDB implements BDInterface {
             //Arreglear SQL de PAQUETE
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/paquete_registro.php?id=" + ((Paquete) t).getidPaquete());
+                http.httpGetData("http://10.0.2.2/SSPP/paquete_registro.php?id=" + ((Paquete) t).getidPaquete());
                 aux = "SUCCESSFUL";
             }catch (Exception e)
             {
@@ -40,7 +40,7 @@ public class PaqueteDB implements BDInterface {
             //Arreglear SQL de PAQUETE
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/paquete_eliminar.php?id=" + ((Paquete) t).getidPaquete());
+                http.httpGetData("http://10.0.2.2/SSPP/paquete_eliminar.php?id=" + ((Paquete) t).getidPaquete());
                 aux = "SUCCESSFUL";
             }catch (Exception e)
             {

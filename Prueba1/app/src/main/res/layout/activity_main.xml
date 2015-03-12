@@ -6,70 +6,104 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
     android:id="@+id/Prueba1"
     android:clickable="false"
-    android:background="#fff5e90d">
+    android:background="#ffffffff">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Usuario"
-        android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
+        android:text="Rut Usuario:"
+        android:id="@+id/txtusuario"
+        android:autoLink="map"
+        android:layout_above="@+id/edpassword"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="43dp"
+        android:singleLine="false"
+        android:phoneNumber="false"
+        android:password="false" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
         android:id="@+id/edusuario"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignBottom="@+id/txtusuario"
+        android:layout_alignLeft="@+id/Blogin"
+        android:layout_alignStart="@+id/Blogin"
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Clave"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/edusuario"
+        android:text="Contraseña:"
+        android:id="@+id/txtcontraseña"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/edpassword"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:enabled="true"
+        android:layout_alignBottom="@+id/txtcontraseña"
+        android:layout_alignLeft="@+id/edusuario"
+        android:layout_alignStart="@+id/edusuario" />
 
     <Button
-        android:layout_width="match_parent"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingresar"
         android:id="@+id/Blogin"
+        android:layout_marginTop="44dp"
         android:layout_below="@+id/edpassword"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrarse"
-        android:id="@+id/Bregistrar"
-        android:layout_below="@+id/Blogin"
         android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView4"
-        android:src="@drawable/sellpotato"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/Bregistrar" />
+        android:id="@+id/imageView"
+        android:src="@drawable/agro3"
+        android:layout_above="@+id/edusuario"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="56dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Si aun no estás registrado"
+        android:id="@+id/txt1"
+        android:elegantTextHeight="false"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/Blogin"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ENTRA AQUÍ"
+        android:id="@+id/link"
+        android:textColorLink="#ffff6ec6"
+        android:layout_below="@+id/txt1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:clickable="false"
+        android:editable="false"
+        android:elegantTextHeight="false"
+        android:enabled="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:linksClickable="true" />
 
 </RelativeLayout>
