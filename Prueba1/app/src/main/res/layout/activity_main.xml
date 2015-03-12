@@ -94,7 +94,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="ENTRA AQUÍ"
         android:id="@+id/link"
-        android:textColorLink="#ffff6ec6"
         android:layout_below="@+id/txt1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
@@ -104,6 +103,10 @@
         android:enabled="true"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:linksClickable="true" />
+        android:linksClickable="true"
+        android:nestedScrollingEnabled="false"
+        android:singleLine="false"
+        android:textStyle="italic"
+        android:textIsSelectable="false" />
 
 </RelativeLayout>
