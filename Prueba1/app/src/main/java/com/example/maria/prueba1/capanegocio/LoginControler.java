@@ -60,7 +60,7 @@ public class LoginControler {
             clienteDB = new ClienteDB();
 
             clienteDB.Get(cliente);
-            if(cliente == null){
+            if(cliente.getnombre() == null){
                 Log.e("Respuesta","Cliente no Encontrado");
                 return false;
             }

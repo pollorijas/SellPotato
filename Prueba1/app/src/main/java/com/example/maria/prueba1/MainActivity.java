@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.maria.prueba1.capanegocio.ClienteControler;
 import com.example.maria.prueba1.capanegocio.LoginControler;
+import com.example.maria.prueba1.capanegocio.Traspaso;
 import com.example.maria.prueba1.library.Httppostaux;
 
 import org.apache.http.NameValuePair;
@@ -226,14 +227,16 @@ public class MainActivity extends ActionBarActivity {
 
                 //Creacion del Controlador de Cliente
                 //Es static y singleton asi se podra usar sin ningun problema en la otra activity
-                controler = ClienteControler.getInstance();
+                controler = new ClienteControler();
                 controler.setCliente(lc.getCliente());
 
+                Log.e("Cliente","Cliente: " +lc.getUserType());
                 Log.e("Vista","Cliente: " + controler.getCliente().getnombre());
+
+                Traspaso.setControler(controler);
 
                 Intent iu = new Intent(MainActivity.this, InterfazUsuario.class);
                 iu.putExtra("user", user);
-                //iu.putExtra("cliente",controler);
                 startActivity(iu);
             }else if(result.equals("ok") && tipo.equals("BODEGUERO")) {
                 Intent ib = new Intent(MainActivity.this, InterfazBodeguero.class);

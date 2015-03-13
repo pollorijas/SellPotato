@@ -96,7 +96,7 @@ public class ClienteDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
 
             ja = null;
-            data = http.httpGetData("http://10.0.2.2/SSPP/cliente_buscar.php?rut=" + ((Cliente) t).getrut());
+            data = http.httpGetData("http://vendepapas.esy.es/SQL/cliente_buscar.php?rut=" + ((Cliente) t).getrut());
             if (data.length()>0){
                 try {
                     ja= new JSONArray(data);
@@ -111,7 +111,6 @@ public class ClienteDB implements BDInterface {
                     t = null;
                 }
             }
-
         }
         else t = null;
     }

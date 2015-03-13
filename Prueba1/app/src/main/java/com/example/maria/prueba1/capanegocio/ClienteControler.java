@@ -12,17 +12,9 @@ import java.util.ArrayList;
  */
 public class ClienteControler{
 
-    private static ClienteControler instance;
     private Cliente cliente;
 
-    private ClienteControler()
-    {}
-
-    public static ClienteControler getInstance()
-    {
-        if(instance == null) return new ClienteControler();
-        else return instance;
-    }
+    public ClienteControler(){}
 
     public Cliente getCliente() {
         return cliente;
