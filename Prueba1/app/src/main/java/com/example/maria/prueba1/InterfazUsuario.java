@@ -16,7 +16,8 @@ import com.example.maria.prueba1.capanegocio.Traspaso;
 
 public class InterfazUsuario extends Activity {
 
-    ImageButton imgeditu;
+    ImageButton imgeditu, imggestionar;
+    TextView txtcs;
 
     ClienteControler controler;
 
@@ -26,10 +27,26 @@ public class InterfazUsuario extends Activity {
         setContentView(R.layout.interfaz_usuario);
 
         imgeditu = (ImageButton)findViewById(R.id.imgeditu);
+        imggestionar = (ImageButton)findViewById(R.id.imggestionar);
+        txtcs = (TextView)findViewById(R.id.txtcs);
 
         imgeditu.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent ri = new Intent(getApplicationContext(), ModificarCliente.class);
+                startActivity(ri);
+            }
+        });
+
+        imggestionar.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent ri = new Intent(getApplicationContext(), GestionarCompra.class);
+                startActivity(ri);
+            }
+        });
+
+        txtcs.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent ri = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(ri);
             }
         });
