@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_registrar_producto">RegistrarProducto</string>
     <string name="title_activity_modificar_cliente">ModificarCliente</string>
+    <string name="title_activity_gestionar_compra">GestionarCompra</string>
 
 </resources>

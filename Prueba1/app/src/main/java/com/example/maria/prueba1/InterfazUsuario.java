@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.example.maria.prueba1.capanegocio.ClienteControler;
 
 public class InterfazUsuario extends Activity {
-    String user;
+   /* String user;
     ListView lista;
     TextView logoff;
     String[] usuario = {
@@ -23,14 +23,14 @@ public class InterfazUsuario extends Activity {
             "Ver estado Pedido",
             "Cancelar Pedido",
             "Realizar Pago"
-    };
-    ClienteControler controler;
+    };*/
+   // ClienteControler controler;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.interfaz_usuario);
-
+/*
         Bundle extras = getIntent().getExtras();
 
         //controler = (ClienteControler)extras.getSerializable("cliente");
@@ -87,6 +87,6 @@ public class InterfazUsuario extends Activity {
                         break;
                 }
             }
-        });
+        });*/
     }
 }
