@@ -26,8 +26,8 @@ import java.io.IOException;
 
 public class ModificarCliente extends ActionBarActivity {
 
-    EditText etrut, etnombre, etapellido, ettelefono, etdireccion, etdescripcion, etpassword;
-    TextView jaja;
+    EditText ettelefono, etdireccion, etdescripcion, etpassword;
+    TextView txtrut, txtnombre, txtapellido;
     Button btn_modificar, btn_consultar;
     JSONArray ja;
     String data;
@@ -48,9 +48,9 @@ public class ModificarCliente extends ActionBarActivity {
 
             try {
                 //jaja.setText(ja.getString(0));
-                etrut.setText(ja.getString(0));
-                etnombre.setText(ja.getString(1));
-                etapellido.setText(ja.getString(2));
+                txtrut.setText(ja.getString(0));
+                txtnombre.setText(ja.getString(1));
+                txtapellido.setText(ja.getString(2));
                 ettelefono.setText(ja.getString(3));
                 etdireccion.setText(ja.getString(4));
                 etdescripcion.setText(ja.getString(5));
@@ -67,14 +67,14 @@ public class ModificarCliente extends ActionBarActivity {
         setContentView(R.layout.modificar_cliente);
 
 
-        etrut = (EditText)findViewById(R.id.et_rut);
-        etnombre = (EditText)findViewById(R.id.et_nombre);
-        etapellido = (EditText)findViewById(R.id.et_apellido);
-        ettelefono = (EditText)findViewById(R.id.et_telefono);
-        etdireccion = (EditText)findViewById(R.id.et_direccion);
-        etdescripcion = (EditText)findViewById(R.id.et_descripcion);
-        etpassword = (EditText)findViewById(R.id.et_password);
-        btn_consultar = (Button)findViewById(R.id.btn_consultar);
+        txtrut = (TextView)findViewById(R.id.txtrut);
+        txtnombre = (TextView)findViewById(R.id.txtnombre);
+         txtapellido= (TextView)findViewById(R.id.txtapellido);
+        ettelefono = (EditText)findViewById(R.id.ettelefono);
+        etdireccion = (EditText)findViewById(R.id.etdireccion);
+        etdescripcion = (EditText)findViewById(R.id.etdescripcion);
+        etpassword = (EditText)findViewById(R.id.etpassword);
+       // btn_consultar = (Button)findViewById(R.id.btn_consultar);
         btn_modificar = (Button)findViewById(R.id.btn_modificar);
         //jaja = (TextView)findViewById(R.id.jaja);
 
@@ -86,39 +86,14 @@ public class ModificarCliente extends ActionBarActivity {
                     @Override
                     public void run() {
 
-                        httpGetData("http://10.0.2.2/SSPP/cliente_actualizar.php?rut="+etrut.getText()+"&telefono="+ettelefono.getText()
+                        httpGetData("http://10.0.2.2/SSPP/cliente_actualizar.php?rut="+txtrut.getText()+"&telefono="+ettelefono.getText()
                                 +"&direccion="+etdireccion.getText()+"&descripcion="+etdescripcion.getText()+"&password="+etpassword.getText());
                         h1.sendEmptyMessage(1);
                     }
                 }).start();
             }
         });
-        btn_consultar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
 
-                        ja = null;
-                        data = httpGetData("http://10.0.2.2/SSPP/cliente_buscar.php?rut="+etrut.getText());
-                        if (data.length()>0){
-                            try {
-                                ja= new  JSONArray(data);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-
-                            h.sendEmptyMessage(1);
-
-
-
-                        }
-
-                    }
-                }).start();
-            }
-        });
     }
 
     public String httpGetData(String mURL){
