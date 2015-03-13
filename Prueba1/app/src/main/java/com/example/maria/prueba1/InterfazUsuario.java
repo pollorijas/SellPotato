@@ -25,18 +25,20 @@ public class InterfazUsuario extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.interfaz_usuario);
 
+        controler = Traspaso.getControler();
+
         imgeditu = (ImageButton)findViewById(R.id.imgeditu);
 
         imgeditu.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
+
+                Traspaso.setControler(controler);
+
                 Intent ri = new Intent(getApplicationContext(), ModificarCliente.class);
                 startActivity(ri);
             }
         });
 
-        controler = Traspaso.getControler();
-
-        Log.e("Cliente: ","Nombre: " + controler.getCliente().getnombre());
 
     }
 }

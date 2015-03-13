@@ -36,8 +36,6 @@ public class MainActivity extends ActionBarActivity {
     Button blogin;
     TextView link;
 
-    //Button registrar;
-    TextView registrar;
     Httppostaux post;
     LoginControler lc;
     ClienteControler controler;

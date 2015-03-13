@@ -25,7 +25,7 @@ public class ClienteDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
 
             try {
-                http.httpGetData("http://10.0.2.2/SSPP/cliente_registro.php?rut="
+                http.httpGetData("http://vendepapas.esy.es/SQL/cliente_registro.php?rut="
                         + ((Cliente) t).getrut()
                         + "&nombre=" + ((Cliente) t).getnombre()
                         + "&apellido=" + ((Cliente) t).getapellido()
@@ -52,7 +52,7 @@ public class ClienteDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
 
             try {
-                http.httpGetData("http://10.0.2.2/SSPP/cliente_actualizar.php?rut=" + ((Cliente) t).getrut()
+                http.httpGetData("http://vendepapas.esy.es/SQL/cliente_actualizar.php?rut=" + ((Cliente) t).getrut()
                         + "&telefono=" + ((Cliente) t).getfono()
                         + "&direccion=" + ((Cliente) t).getdireccion()
                         + "&descripcion=" + ((Cliente) t).getdescripcionHogar()
@@ -76,7 +76,7 @@ public class ClienteDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
 
             try {
-                http.httpGetData("http://10.0.2.2/SSPP/cliente_eliminar.php?rut=" + ((Cliente) t).getrut());
+                http.httpGetData("http://vendepapas.esy.es/SQL/cliente_eliminar.php?rut=" + ((Cliente) t).getrut());
                 return "SUCCESSFUL";
             }
             catch(Exception e){

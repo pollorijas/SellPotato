@@ -22,7 +22,7 @@ public class ControlerDB {
         String type = "ERROR";
 
         ja = null;
-        data = http.httpGetData("http://10.0.2.2/SSPP/consulta.php?rut=" + user + "&pass=" + pass);
+        data = http.httpGetData("http://vendepapas.esy.es/SQL/consulta.php?rut=" + user + "&pass=" + pass);
         Log.e("Data", "Data: " + data);
         if (data.length()>0){
             try {
@@ -37,5 +37,6 @@ public class ControlerDB {
         }
         return type;
     }
+
 
 }
