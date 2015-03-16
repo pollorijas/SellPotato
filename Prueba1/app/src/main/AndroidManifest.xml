@@ -55,6 +55,10 @@
             android:name=".GestionarCompra"
             android:label="@string/title_activity_gestionar_compra" >
         </activity>
+        <activity
+            android:name=".GestionarCamion"
+            android:label="@string/title_activity_gestionar_camion" >
+        </activity>
     </application>
 
 </manifest>

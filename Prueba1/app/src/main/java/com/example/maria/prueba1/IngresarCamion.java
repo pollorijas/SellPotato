@@ -40,11 +40,11 @@ public class IngresarCamion extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ingresar_camion);
 
-        patente_camion = (EditText) findViewById(R.id.patente_camion);
-        marca_camion = (EditText) findViewById(R.id.marca_camion);
-        modelo_camion = (EditText) findViewById(R.id.modelo_camion);
-        tara_camion = (EditText) findViewById(R.id.tara_camion);
-        dimension_camion = (EditText) findViewById(R.id.dimension_camion);
+        patente_camion = (EditText) findViewById(R.id.patente);
+        marca_camion = (EditText) findViewById(R.id.marca);
+        modelo_camion = (EditText) findViewById(R.id.modelo);
+        tara_camion = (EditText) findViewById(R.id.tara);
+        dimension_camion = (EditText) findViewById(R.id.dimensiones);
 
         ingresar_camion = (Button) findViewById(R.id.ingresar_camion);
 

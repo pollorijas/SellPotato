@@ -27,43 +27,6 @@ public class InterfazBodeguero extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.interfaz_bodeguero);
 
-        Bundle extras = getIntent().getExtras();
-        //Obtenemos datos enviados en el intent.
-        if (extras != null) {
-            user  = extras.getString("user");//usuario
-        }else{
-            user="error";
-        }
-        logoff= (TextView) findViewById(R.id.logoff);
-        lista = (ListView) findViewById(R.id.listView1);
-        logoff.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                //'cerrar  sesion' nos regresa a la ventana anterior.
-                finish();
-            }
-        });
-        ArrayAdapter adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, bodeguero);
 
-        lista.setAdapter(adaptador);
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView adapterView, View view, int i, long l) {
-                // Toast.makeText(getApplicationContext(), "posicion " + (i + 1) + personas[i], Toast.LENGTH_SHORT).show();
-                switch (i) {
-                    case 0:
-                        //Intent ii = new Intent(getApplicationContext(), RegistrarProducto.class);
-                        //startActivity(ii);
-                        break;
-                    case 1:
-                        Intent im = new Intent(getApplicationContext(), GenerarPedido.class);
-                        startActivity(im);
-                        break;
-                    case 2:
-                        Intent ip = new Intent(getApplicationContext(), ProcesarPedido.class);
-                        startActivity(ip);
-                        break;
-                }
-            }
-        });
     }
 }

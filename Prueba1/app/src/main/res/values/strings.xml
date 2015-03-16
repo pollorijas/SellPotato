@@ -7,5 +7,6 @@
     <string name="title_activity_registrar_producto">RegistrarProducto</string>
     <string name="title_activity_modificar_cliente">ModificarCliente</string>
     <string name="title_activity_gestionar_compra">GestionarCompra</string>
+    <string name="title_activity_gestionar_camion">GestionarCamion</string>
 
 </resources>
