@@ -3,13 +3,8 @@ package com.example.maria.prueba1;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.maria.prueba1.capanegocio.ClienteControler;
 import com.example.maria.prueba1.capanegocio.Traspaso;
@@ -30,7 +25,7 @@ public class InterfazRepartidor extends Activity {
 
         controler = Traspaso.getControler();
 
-        imgcamion = (ImageButton)findViewById(R.id.imgcamion);
+        imgcamion = (ImageButton)findViewById(R.id.imgcamionadd);
 
         imgcamion.setOnClickListener(new View.OnClickListener() {
             @Override

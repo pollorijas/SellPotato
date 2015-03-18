@@ -34,109 +34,71 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="393dp"
-            android:layout_gravity="right|bottom">
+            android:layout_gravity="center_horizontal|bottom">
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton2"
-                android:src="@drawable/gp"
-                android:layout_marginTop="23dp"
+                android:id="@+id/imgproductoadd"
+                android:src="@drawable/mp"
                 android:layout_alignParentTop="true"
-                android:layout_alignLeft="@+id/textView5"
-                android:layout_alignStart="@+id/textView5" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="34dp"
+                android:layout_marginStart="34dp"
+                android:layout_alignBottom="@+id/imgproductoupd" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton3"
-                android:layout_alignBottom="@+id/imageButton2"
+                android:id="@+id/imgproductoupd"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="42dp"
                 android:layout_marginEnd="42dp"
-                android:src="@drawable/cp" />
+                android:src="@drawable/ep" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Generar Pedido"
-                android:id="@+id/textView2"
-                android:layout_below="@+id/imageButton2"
-                android:layout_toLeftOf="@+id/textView3"
-                android:layout_toStartOf="@+id/textView3"
-                android:layout_marginRight="27dp"
-                android:layout_marginEnd="27dp" />
+                android:text="Ingresar Producto"
+                android:id="@+id/textView30"
+                android:layout_below="@+id/imgproductoupd"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="11dp"
+                android:layout_marginStart="11dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Cancelar Pedido"
-                android:id="@+id/textView3"
-                android:layout_above="@+id/imageButton4"
-                android:layout_alignRight="@+id/textView28"
-                android:layout_alignEnd="@+id/textView28" />
+                android:text="Actualizar Stock"
+                android:id="@+id/textView31"
+                android:layout_alignTop="@+id/textView30"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="22dp"
+                android:layout_marginEnd="22dp" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton4"
-                android:src="@drawable/mp"
-                android:layout_below="@+id/textView2"
-                android:layout_alignLeft="@+id/imageButton2"
-                android:layout_alignStart="@+id/imageButton2"
-                android:layout_marginTop="19dp" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton5"
-                android:layout_alignRight="@+id/imageButton3"
-                android:layout_alignEnd="@+id/imageButton3"
-                android:src="@drawable/ep"
-                android:layout_alignBottom="@+id/imageButton4" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Modificar Pedido"
-                android:id="@+id/textView5"
-                android:layout_below="@+id/imageButton5"
-                android:layout_alignLeft="@+id/textView2"
-                android:layout_alignStart="@+id/textView2"
-                android:layout_marginLeft="7dp"
-                android:layout_marginStart="7dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Estado Pedido"
-                android:id="@+id/textView28"
-                android:layout_below="@+id/imageButton4"
-                android:layout_alignLeft="@+id/imageButton3"
-                android:layout_alignStart="@+id/imageButton3" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton6"
-                android:src="@drawable/pp"
-                android:layout_below="@+id/textView5"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="18dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Realizar Pago"
-                android:id="@+id/textView29"
-                android:layout_below="@+id/imageButton6"
+                android:id="@+id/imgprocesarp"
+                android:src="@drawable/pedido"
+                android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Procesar Pedido"
+                android:id="@+id/textView32"
+                android:layout_below="@+id/imgprocesarp"
+                android:layout_centerHorizontal="true" />
+
 
         </RelativeLayout>
 

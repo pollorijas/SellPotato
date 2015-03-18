@@ -8,5 +8,9 @@
     <string name="title_activity_modificar_cliente">ModificarCliente</string>
     <string name="title_activity_gestionar_compra">GestionarCompra</string>
     <string name="title_activity_gestionar_camion">GestionarCamion</string>
+    <string name="title_activity_modificar_camion">ModificarCamion</string>
+    <string name="title_activity_eliminar_camion">EliminarCamion</string>
+    <string name="title_activity_listar_camion">ListarCamion</string>
+    <string name="title_activity_ingresar_producto">IngresarProducto</string>
 
 </resources>

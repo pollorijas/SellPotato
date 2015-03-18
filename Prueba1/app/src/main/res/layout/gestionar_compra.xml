@@ -39,7 +39,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton2"
+                android:id="@+id/imgproductoadd"
                 android:src="@drawable/gp"
                 android:layout_marginTop="23dp"
                 android:layout_alignParentTop="true"
@@ -49,8 +49,8 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton3"
-                android:layout_alignBottom="@+id/imageButton2"
+                android:id="@+id/imgproductoupd"
+                android:layout_alignBottom="@+id/imgproductoadd"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="42dp"
@@ -63,7 +63,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Generar Pedido"
                 android:id="@+id/textView2"
-                android:layout_below="@+id/imageButton2"
+                android:layout_below="@+id/imgproductoadd"
                 android:layout_toLeftOf="@+id/textView3"
                 android:layout_toStartOf="@+id/textView3"
                 android:layout_marginRight="27dp"
@@ -85,16 +85,16 @@
                 android:id="@+id/imageButton4"
                 android:src="@drawable/mp"
                 android:layout_below="@+id/textView2"
-                android:layout_alignLeft="@+id/imageButton2"
-                android:layout_alignStart="@+id/imageButton2"
+                android:layout_alignLeft="@+id/imgproductoadd"
+                android:layout_alignStart="@+id/imgproductoadd"
                 android:layout_marginTop="19dp" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton5"
-                android:layout_alignRight="@+id/imageButton3"
-                android:layout_alignEnd="@+id/imageButton3"
+                android:layout_alignRight="@+id/imgproductoupd"
+                android:layout_alignEnd="@+id/imgproductoupd"
                 android:src="@drawable/ep"
                 android:layout_alignBottom="@+id/imageButton4" />
 
@@ -117,8 +117,8 @@
                 android:text="Estado Pedido"
                 android:id="@+id/textView28"
                 android:layout_below="@+id/imageButton4"
-                android:layout_alignLeft="@+id/imageButton3"
-                android:layout_alignStart="@+id/imageButton3" />
+                android:layout_alignLeft="@+id/imgproductoupd"
+                android:layout_alignStart="@+id/imgproductoupd" />
 
             <ImageButton
                 android:layout_width="wrap_content"

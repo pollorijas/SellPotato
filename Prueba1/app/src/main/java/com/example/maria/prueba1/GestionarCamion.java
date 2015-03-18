@@ -1,39 +1,66 @@
 package com.example.maria.prueba1;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+
+import com.example.maria.prueba1.capanegocio.ClienteControler;
+import com.example.maria.prueba1.capanegocio.Traspaso;
 
 
 public class GestionarCamion extends ActionBarActivity {
 
+    ClienteControler controler;
+    ImageButton imgcamionadd, imgcamiondel, imgcamionlist, imgcamionupd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ingresar_camion);
-    }
+        setContentView(R.layout.gestionar_camion);
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_gestionar_camion, menu);
-        return true;
-    }
+    controler = Traspaso.getControler();
+    imgcamionadd = (ImageButton)findViewById(R.id.imgcamionadd);
+    imgcamiondel= (ImageButton)findViewById(R.id.imgcamiondel);
+    imgcamionlist = (ImageButton)findViewById(R.id.imgcamionlist);
+    imgcamionupd = (ImageButton)findViewById(R.id.imgcamionupd);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    imgcamionupd.setOnClickListener(new View.OnClickListener(){
+        public void onClick(View view){
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            Traspaso.setControler(controler);
+
+            Intent ri = new Intent(getApplicationContext(), ModificarCamion.class);
+            startActivity(ri);
         }
+    });
 
-        return super.onOptionsItemSelected(item);
+    imgcamionadd.setOnClickListener(new View.OnClickListener(){
+        public void onClick(View view){
+            Intent ri = new Intent(getApplicationContext(), IngresarCamion.class);
+            startActivity(ri);
+        }
+    });
+
+        imgcamiondel.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent ri = new Intent(getApplicationContext(), EliminarCamion.class);
+                startActivity(ri);
+            }
+        });
+
+        imgcamionlist.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent ri = new Intent(getApplicationContext(), ListarCamion.class);
+                startActivity(ri);
+            }
+        });
+
     }
+
 }

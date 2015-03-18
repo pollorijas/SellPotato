@@ -40,13 +40,88 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imgcamion"
+                android:id="@+id/imgcamionadd"
                 android:src="@drawable/camion"
+                android:layout_marginLeft="36dp"
+                android:layout_marginStart="36dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton"
+                android:src="@drawable/mapa"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/imgcamionadd"
+                android:layout_alignStart="@+id/imgcamionadd" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton7"
+                android:src="@drawable/pp"
+                android:layout_alignBottom="@+id/imageButton"
+                android:layout_alignRight="@+id/textView21"
+                android:layout_alignEnd="@+id/textView21" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton8"
+                android:src="@drawable/ordenar"
+                android:layout_marginRight="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Gestionar Camión"
+                android:id="@+id/textView20"
+                android:layout_below="@+id/imgcamionadd"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="40dp"
-                android:layout_marginStart="40dp" />
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Cargar Camión"
+                android:id="@+id/textView21"
+                android:layout_below="@+id/imageButton8"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="29dp"
+                android:layout_marginEnd="29dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Generar Recorrido"
+                android:id="@+id/textView22"
+                android:layout_below="@+id/imageButton"
+                android:layout_alignRight="@+id/textView20"
+                android:layout_alignEnd="@+id/textView20"
+                android:layout_marginRight="7dp"
+                android:layout_marginEnd="7dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Realizar Cobro"
+                android:id="@+id/textView23"
+                android:layout_alignTop="@+id/textView22"
+                android:layout_alignLeft="@+id/imageButton8"
+                android:layout_alignStart="@+id/imageButton8" />
         </RelativeLayout>
 
     </FrameLayout>
