@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.maria.prueba1.capanegocio.ClienteControler;
+import com.example.maria.prueba1.capanegocio.Traspaso;
+
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
@@ -25,6 +28,7 @@ public class IngresarCamion extends Activity {
     Button ingresar_camion;
     JSONArray ja;
     String data;
+    private ClienteControler controler;
 
     Handler h1 = new Handler(){
         @Override
@@ -39,6 +43,7 @@ public class IngresarCamion extends Activity {
     protected  void  onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ingresar_camion);
+        controler = Traspaso.getControler();
 
         patente_camion = (EditText) findViewById(R.id.patente);
         marca_camion = (EditText) findViewById(R.id.marca);
@@ -102,17 +107,17 @@ public class IngresarCamion extends Activity {
     protected EditText dimesion;
     protected Button ingresar_camion;
 
-    /*
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ingresar_cliente);
+        setContentView(R.layout.ingresar_camion);
 
-        patente = (EditText) findViewById(R.id.patente_camion);
-        modelo = (EditText)findViewById(R.id.modelo_camion);
-        marca = (EditText)findViewById(R.id.marca_camion);
-        tara = (EditText)findViewById(R.id.tara_camion);
-        dimesion = (EditText)findViewById(R.id.dimension_camion);
+        patente = (EditText) findViewById(R.id.patente);
+        modelo = (EditText)findViewById(R.id.modelo);
+        marca = (EditText)findViewById(R.id.marca);
+        tara = (EditText)findViewById(R.id.tara);
+        dimesion = (EditText)findViewById(R.id.dimensiones);
         ingresar_camion = (Button)findViewById(R.id.ingresar_camion);
 
         ingresar_camion.setOnClickListener(new View.OnClickListener(){
@@ -123,4 +128,5 @@ public class IngresarCamion extends Activity {
         });
     }
 }
+
 */

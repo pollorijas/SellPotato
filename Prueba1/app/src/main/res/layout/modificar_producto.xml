@@ -37,81 +37,8 @@
             android:layout_gravity="center_horizontal|bottom"
             android:id="@+id/ly">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Producto:"
-                android:id="@+id/textView7"
-                android:layout_alignBottom="@+id/nombre_producto"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:ems="10"
-                android:id="@+id/nombre_producto"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="35dp"
-                android:layout_marginEnd="35dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Descripción:"
-                android:id="@+id/textView8"
-                android:layout_marginTop="27dp"
-                android:layout_below="@+id/textView7"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/descripcion_producto"
-                android:layout_alignBottom="@+id/textView8"
-                android:layout_alignRight="@+id/nombre_producto"
-                android:layout_alignEnd="@+id/nombre_producto" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Precio:"
-                android:id="@+id/textView9"
-                android:layout_below="@+id/textView8"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="28dp" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/precio_producto"
-                android:layout_alignBottom="@+id/textView9"
-                android:layout_alignRight="@+id/nombre_producto"
-                android:layout_alignEnd="@+id/nombre_producto" />
 
 
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Modificar"
-                android:id="@+id/modificar_producto"
-                android:layout_below="@+id/precio_producto"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="21dp" />
         </RelativeLayout>
 
     </FrameLayout>

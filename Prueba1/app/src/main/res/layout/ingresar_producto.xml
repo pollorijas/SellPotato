@@ -113,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Registrar"
-                android:id="@+id/modificar_producto"
+                android:id="@+id/registrar_producto"
                 android:layout_below="@+id/stock_producto"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="32dp" />
