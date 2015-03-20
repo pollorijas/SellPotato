@@ -97,7 +97,7 @@ public class MainActivity extends ActionBarActivity {
     public void err_login(){
         Vibrator vibrator =(Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         vibrator.vibrate(200);
-        Toast toast1 = Toast.makeText(getApplicationContext(),"Error:Nombre de usuario o password incorrectos", Toast.LENGTH_SHORT);
+        Toast toast1 = Toast.makeText(getApplicationContext(),"Error: Nombre de Usuario o Password incorrectos", Toast.LENGTH_SHORT);
         toast1.show();
     }
 
