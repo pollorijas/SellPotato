@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,6 +42,7 @@ public class ModificarCliente extends ActionBarActivity {
         setContentView(R.layout.modificar_cliente);
 
         controler = Traspaso.getControler();
+        Log.e("direccion",controler.getCliente().getdireccion());
 
         txtrut = (TextView)findViewById(R.id.txtrut);
         txtnombre = (TextView)findViewById(R.id.txtnombre);
