@@ -11,18 +11,19 @@ public class Cliente extends Persona {
 
 	private String descripcionHogar;
 	private String direccion;
-	private double fono;
+	private String fono;
 	public Pedido m_Pedido;
 	public Ruta m_Ruta;
-    private ClienteDB clienteDB;
+
+    private ClienteDB data;
 
 	public Cliente(){
-        clienteDB = new ClienteDB();
+        data = new ClienteDB();
 	}
 
-    public Cliente(String nombre,String apellido, String rut, String descripcionHogar, String direccion, double fono)
+    public Cliente(String nombre,String apellido, String rut, String descripcionHogar, String direccion, String fono)
     {
-        clienteDB = new ClienteDB();
+        data = new ClienteDB();
         this.setnombre(nombre);
         this.setapellido(apellido);
         this.setrut(rut);
@@ -49,13 +50,15 @@ public class Cliente extends Persona {
 		direccion = newVal;
 	}
 
-	public double getfono(){
+	public String getfono(){
 		return fono;
 	}
 
-	public void setfono(double newVal){
+	public void setfono(String newVal){
 		fono = newVal;
 	}
 
-
+    public ClienteDB getData() {
+        return data;
+    }
 }//end Cliente

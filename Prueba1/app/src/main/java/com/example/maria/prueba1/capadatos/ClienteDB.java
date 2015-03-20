@@ -102,7 +102,7 @@ public class ClienteDB implements BDInterface {
                     ja= new JSONArray(data);
                     ((Cliente) t).setnombre(ja.getString(1));
                     ((Cliente) t).setapellido(ja.getString(2));
-                    ((Cliente) t).setfono(Double.parseDouble(ja.getString(3)));
+                    ((Cliente) t).setfono(ja.getString(3));
                     ((Cliente) t).setdireccion(ja.getString(4));
                     ((Cliente) t).setdescripcionHogar(ja.getString(5));
                 } catch (JSONException e) {

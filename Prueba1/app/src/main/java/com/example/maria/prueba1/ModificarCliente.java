@@ -1,5 +1,7 @@
 package com.example.maria.prueba1;
 
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.ActionBarActivity;
@@ -34,12 +36,16 @@ public class ModificarCliente extends ActionBarActivity {
     TextView txtrut, txtnombre, txtapellido;
     Button btn_modificar;
 
-    private ClienteControler controler;
+    private ProgressDialog pDialog;
+
+    public ClienteControler controler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modificar_cliente);
+
+        String msg = "";
 
         controler = Traspaso.getControler();
         Log.e("direccion",controler.getCliente().getdireccion());
@@ -58,7 +64,7 @@ public class ModificarCliente extends ActionBarActivity {
         txtrut.setText(controler.getCliente().getrut());
         txtnombre.setText(controler.getCliente().getnombre());
         txtapellido.setText(controler.getCliente().getapellido());
-        ettelefono.setText(Double.toString(controler.getCliente().getfono()));
+        ettelefono.setText(controler.getCliente().getfono());
         etdireccion.setText(controler.getCliente().getdireccion());
         etdescripcion.setText(controler.getCliente().getdescripcionHogar());
         etpassword.setText(controler.getCliente().getPassword());
@@ -67,12 +73,62 @@ public class ModificarCliente extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
+                controler.getCliente().setdescripcionHogar(etdescripcion.getText().toString());
+                controler.getCliente().setdireccion(etdireccion.getText().toString());
+                controler.getCliente().setfono(ettelefono.getText().toString());
+                controler.getCliente().setPassword(etpassword.getText().toString());
 
+                new AsyncModificar().execute(true);
 
             }
         });
 
     }
 
+    class AsyncModificar extends AsyncTask<Boolean,String,Boolean>
+    {
+
+        @Override
+        protected void onPreExecute() {
+            pDialog = new ProgressDialog(ModificarCliente.this);
+            pDialog.setMessage("Actualizando...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+
+            pDialog.dismiss();
+
+            boolean result = aBoolean;
+
+            Log.e("Datos:", "Datos: " + controler.getCliente().getPassword());
+
+            if(result) msgShow("Datos Actualizados Correctamente");
+            else msgShow("Error: Los datos no has sido Actualizados");
+
+        }
+
+        @Override
+        protected Boolean doInBackground(Boolean... params) {
+            if(Modificar()) return true;
+            else return false;
+        }
+    }
+
+    public void msgShow(String msg)
+    {
+        Toast t = Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT);
+        t.show();
+    }
+
+    public boolean Modificar()
+    {
+        if(controler.ModificarCliente()) return true;
+        else return false;
+    }
 
 }
