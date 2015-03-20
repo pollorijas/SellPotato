@@ -11,7 +11,7 @@ public class Cliente extends Persona {
 
 	private String descripcionHogar;
 	private String direccion;
-	private double fono;
+	private String fono;
 	public Pedido m_Pedido;
 	public Ruta m_Ruta;
 
@@ -21,7 +21,7 @@ public class Cliente extends Persona {
         data = new ClienteDB();
 	}
 
-    public Cliente(String nombre,String apellido, String rut, String descripcionHogar, String direccion, double fono)
+    public Cliente(String nombre,String apellido, String rut, String descripcionHogar, String direccion, String fono)
     {
         data = new ClienteDB();
         this.setnombre(nombre);
@@ -50,11 +50,11 @@ public class Cliente extends Persona {
 		direccion = newVal;
 	}
 
-	public double getfono(){
+	public String getfono(){
 		return fono;
 	}
 
-	public void setfono(double newVal){
+	public void setfono(String newVal){
 		fono = newVal;
 	}
 

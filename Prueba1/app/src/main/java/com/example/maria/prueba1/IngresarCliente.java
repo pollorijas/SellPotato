@@ -1,13 +1,20 @@
 package com.example.maria.prueba1;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.maria.prueba1.capanegocio.Cliente;
+import com.example.maria.prueba1.capanegocio.ClienteControler;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -23,17 +30,8 @@ public class IngresarCliente extends Activity{
 
     EditText rutc, nombrec, apellidoc, telefonoc, direccionc, descripcionc, clavec;
     Button ingresar_cliente;
-    JSONArray ja;
-    String data;
-
-    Handler h1 = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-
-            Toast.makeText(getApplicationContext(),"Ha sido regidtrado con exito",3000).show();
-        }
-    };
+    private ProgressDialog pDialog;
+    public ClienteControler controler;
 
     protected  void  onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);        setContentView(R.layout.ingresar_cliente);
@@ -52,76 +50,65 @@ public class IngresarCliente extends Activity{
             @Override
             public void onClick(View v) {
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
+                controler.setCliente(new Cliente());
 
-                        httpGetData("http://10.0.2.2/SSPP/cliente_registro.php?rut="+rutc.getText()+"&nombre="+nombrec.getText()+"&apellido="+apellidoc.getText()+"&telefono="+telefonoc.getText()
-                                +"&direccion="+direccionc.getText()+"&descripcion="+descripcionc.getText()+"&password="+clavec.getText());
-                        h1.sendEmptyMessage(1);
-                    }
-                }).start();
+                controler.getCliente().setrut(rutc.getText().toString());
+                controler.getCliente().setnombre(nombrec.getText().toString());
+                controler.getCliente().setapellido(apellidoc.getText().toString());
+                controler.getCliente().setfono(telefonoc.getText().toString());
+                controler.getCliente().setdireccion(direccionc.getText().toString());
+                controler.getCliente().setdescripcionHogar(descripcionc.getText().toString());
+                controler.getCliente().setPassword(clavec.getText().toString());
+
+                new AsyncIngresar().execute(true);
+
             }
         });
 
 
     }
 
-    public String httpGetData(String mURL){
-        String response="";
-        mURL=mURL.replace(" ", "%20");
-        HttpClient httpclient = new DefaultHttpClient();
-        HttpGet httpget = new HttpGet(mURL);
+    class AsyncIngresar extends AsyncTask<Boolean,String,Boolean>
+    {
 
-        ResponseHandler<String> responsehandler = new BasicResponseHandler();
-        try {
-            response = httpclient.execute(httpget, responsehandler);
-
-        } catch (ClientProtocolException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        @Override
+        protected void onPreExecute() {
+            pDialog = new ProgressDialog(IngresarCliente.this);
+            pDialog.setMessage("Actualizando...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
         }
-        return response;
-    }
-}
-/**
- * Created by Maria on 15/01/2015.
- */
-/*
-public class IngresarCliente extends Activity {
 
-    protected EditText rut;
-    protected EditText nombre;
-    protected EditText apellido;
-    protected EditText telefono;
-    protected EditText direccion;
-    protected EditText descripcion;
-    protected EditText password;
-    protected Button ingresar_cliente;
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.ingresar_cliente);
+            pDialog.dismiss();
 
-        rut = (EditText) findViewById(R.id.rutc);
-        nombre = (EditText)findViewById(R.id.nombrec);
-        apellido = (EditText)findViewById(R.id.apellidoc);
-        telefono = (EditText)findViewById(R.id.telefonoc);
-        direccion = (EditText)findViewById(R.id.direccionc);
-        password = (EditText) findViewById(R.id.clavec);
-        ingresar_cliente = (Button)findViewById(R.id.ingresar_cliente);
+            boolean result = aBoolean;
 
-        ingresar_cliente.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Toast.makeText(IngresarCliente.this, "Ingresar", Toast.LENGTH_LONG).show();
+            Log.e("Datos:", "Datos: " + controler.getCliente().getPassword());
+
+            if(result){
+                msgShow("El Cliente Ha sido Ingresado Correctamente, Redirecionando al Login");
+                Intent iu = new Intent(IngresarCliente.this, MainActivity.class);
+                finish();
             }
-        });
+            else msgShow("Error: Los datos no has sido Actualizados");
+
+        }
+
+        @Override
+        protected Boolean doInBackground(Boolean... params) {
+            if(controler.Registrar()) return true;
+            else return false;
+        }
+    }
+
+    public void msgShow(String msg)
+    {
+        Toast t = Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT);
+        t.show();
     }
 }
-
-*/

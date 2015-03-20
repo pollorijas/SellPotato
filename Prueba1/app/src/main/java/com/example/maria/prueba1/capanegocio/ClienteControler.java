@@ -30,4 +30,11 @@ public class ClienteControler{
         if(get.equals("SUCCESSFUL")) return true;
         else return false;
     }
+
+    public boolean Registrar()
+    {
+        String get = cliente.getData().Insert(cliente);
+        if(get.equals("SUCCESSFUL")) return true;
+        else return false;
+    }
 }

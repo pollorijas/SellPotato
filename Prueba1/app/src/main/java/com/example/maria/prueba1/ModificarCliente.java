@@ -63,7 +63,7 @@ public class ModificarCliente extends ActionBarActivity {
         txtrut.setText(controler.getCliente().getrut());
         txtnombre.setText(controler.getCliente().getnombre());
         txtapellido.setText(controler.getCliente().getapellido());
-        ettelefono.setText(Double.toString(controler.getCliente().getfono()));
+        ettelefono.setText(controler.getCliente().getfono());
         etdireccion.setText(controler.getCliente().getdireccion());
         etdescripcion.setText(controler.getCliente().getdescripcionHogar());
         etpassword.setText(controler.getCliente().getPassword());
@@ -74,7 +74,7 @@ public class ModificarCliente extends ActionBarActivity {
 
                 controler.getCliente().setdescripcionHogar(etdescripcion.getText().toString());
                 controler.getCliente().setdireccion(etdireccion.getText().toString());
-                controler.getCliente().setfono(Double.parseDouble(ettelefono.getText().toString()));
+                controler.getCliente().setfono(ettelefono.getText().toString());
                 controler.getCliente().setPassword(etpassword.getText().toString());
 
                 new AsyncModificar().execute(true);
