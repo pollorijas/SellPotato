@@ -35,11 +35,6 @@ public class InterfazRepartidor extends Activity {
             }
         });
 
-
-
-
-
-
     }
 
 }

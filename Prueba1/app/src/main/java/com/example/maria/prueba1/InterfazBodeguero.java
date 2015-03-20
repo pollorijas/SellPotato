@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.maria.prueba1.capanegocio.BodegueroControler;
 import com.example.maria.prueba1.capanegocio.ClienteControler;
 import com.example.maria.prueba1.capanegocio.Traspaso;
 
@@ -19,7 +20,7 @@ import com.example.maria.prueba1.capanegocio.Traspaso;
  */
 public class InterfazBodeguero extends Activity {
 
-    ClienteControler controler;
+    BodegueroControler controler;
     ImageButton imgproductoadd, imgproductoupd, imgprocesarp;
 
     @Override
@@ -27,8 +28,8 @@ public class InterfazBodeguero extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.interfaz_bodeguero);
 
+        controler = Traspaso.getBodegueroControler();
 
-        controler = Traspaso.getControler();
         imgproductoadd = (ImageButton)findViewById(R.id.imgproductoadd);
         imgproductoupd = (ImageButton)findViewById(R.id.imgproductoupd);
         imgprocesarp = (ImageButton)findViewById(R.id.imgprocesarp);
@@ -37,7 +38,7 @@ public class InterfazBodeguero extends Activity {
         imgproductoupd.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
 
-                Traspaso.setControler(controler);
+                Traspaso.setBodegueroControler(controler);
 
                 Intent ri = new Intent(getApplicationContext(), ModificarProducto.class);
                 startActivity(ri);
@@ -46,6 +47,9 @@ public class InterfazBodeguero extends Activity {
 
         imgproductoadd.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
+
+                Traspaso.setBodegueroControler(controler);
+
                 Intent ri = new Intent(getApplicationContext(), IngresarProducto.class);
                 startActivity(ri);
             }

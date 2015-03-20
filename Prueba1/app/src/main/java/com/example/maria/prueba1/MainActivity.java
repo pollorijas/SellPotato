@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.maria.prueba1.capanegocio.BodegueroControler;
 import com.example.maria.prueba1.capanegocio.ClienteControler;
 import com.example.maria.prueba1.capanegocio.LoginControler;
 import com.example.maria.prueba1.capanegocio.Traspaso;
@@ -39,6 +40,7 @@ public class MainActivity extends ActionBarActivity {
     Httppostaux post;
     LoginControler lc;
     ClienteControler controler;
+    BodegueroControler bodegueroControler;
 
     // String URL_connect="http://www.scandroidtest.site90.com/acces.php";
     String IP_Server="http://bdsia2.besaba.com";//IP DE NUESTRO PC
@@ -237,6 +239,12 @@ public class MainActivity extends ActionBarActivity {
                 iu.putExtra("user", user);
                 startActivity(iu);
             }else if(result.equals("ok") && tipo.equals("BODEGUERO")) {
+
+                bodegueroControler = new BodegueroControler();
+                bodegueroControler.setBodeguero(lc.getBodeguero());
+
+                Traspaso.setBodegueroControler(bodegueroControler);
+
                 Intent ib = new Intent(MainActivity.this, InterfazBodeguero.class);
                 ib.putExtra("user", user);
                 startActivity(ib);
