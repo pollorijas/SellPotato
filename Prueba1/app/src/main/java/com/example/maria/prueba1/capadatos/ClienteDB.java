@@ -25,7 +25,7 @@ public class ClienteDB implements BDInterface {
             HttpHelpingClass http = new HttpHelpingClass();
 
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/cliente_registro.php?rut="
+                http.httpGetData("http://10.0.2.2/SSPP/cliente_registro.php?rut="
                         + ((Cliente) t).getrut()
                         + "&nombre=" + ((Cliente) t).getnombre()
                         + "&apellido=" + ((Cliente) t).getapellido()
