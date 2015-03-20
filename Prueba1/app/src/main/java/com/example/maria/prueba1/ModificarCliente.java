@@ -1,9 +1,11 @@
 package com.example.maria.prueba1;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -107,7 +109,16 @@ public class ModificarCliente extends ActionBarActivity {
 
             Log.e("Datos:", "Datos: " + controler.getCliente().getPassword());
 
-            if(result) msgShow("Datos Actualizados Correctamente");
+            if(result) {
+                msgShow("Datos Actualizados Correctamente");
+                Traspaso.setControler(controler);
+
+                SystemClock.sleep(50);
+
+                Intent iu = new Intent(ModificarCliente.this, InterfazUsuario.class);
+
+                finish();
+            }
             else msgShow("Error: Los datos no has sido Actualizados");
 
         }
