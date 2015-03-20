@@ -6,6 +6,15 @@ package com.example.maria.prueba1.capanegocio;
 public class Traspaso {
 
     private static ClienteControler controler;
+    private static BodegueroControler bodegueroControler;
+
+    public static BodegueroControler getBodegueroControler() {
+        return Traspaso.bodegueroControler;
+    }
+
+    public static void setBodegueroControler(BodegueroControler bodegueroControler) {
+        Traspaso.bodegueroControler = bodegueroControler;
+    }
 
     public static ClienteControler getControler()
     {

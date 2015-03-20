@@ -79,10 +79,13 @@ public class IngresarCliente extends Activity{
             pDialog.setCancelable(false);
             pDialog.show();
         }
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
@@ -116,4 +119,7 @@ public class IngresarCliente extends Activity{
         t.show();
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master

@@ -1,5 +1,7 @@
 package com.example.maria.prueba1.capanegocio;
 
+import com.example.maria.prueba1.capadatos.PaqueteDB;
+
 /**
  * @author Freddy
  * @version 1.0
@@ -12,9 +14,10 @@ public class Producto {
 	private String nombreProducto;
 	private int stock;
 	private int precio;
+    private PaqueteDB data;
 
 	public Producto(){
-
+        data = new PaqueteDB();
 	}
 
 	public void finalize() throws Throwable {
@@ -79,4 +82,8 @@ public class Producto {
 	public void setprecio(int newVal){
 		precio = newVal;
 	}
+
+    public PaqueteDB getData() {
+        return data;
+    }
 }//end Producto
