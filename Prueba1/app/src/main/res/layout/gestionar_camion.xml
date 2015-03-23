@@ -40,7 +40,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imgcamionadd"
+                android:id="@+id/imgwp"
                 android:src="@drawable/camionadd"
                 android:layout_marginLeft="42dp"
                 android:layout_marginStart="42dp"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imgcamiondel"
                 android:src="@drawable/camiondel"
-                android:layout_alignTop="@+id/imgcamionadd"
+                android:layout_alignTop="@+id/imgwp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="39dp"
@@ -91,8 +91,8 @@
                 android:layout_marginTop="69dp"
                 android:src="@drawable/camionupd"
                 android:layout_below="@+id/textView14"
-                android:layout_alignLeft="@+id/imgcamionadd"
-                android:layout_alignStart="@+id/imgcamionadd" />
+                android:layout_alignLeft="@+id/imgwp"
+                android:layout_alignStart="@+id/imgwp" />
 
             <ImageButton
                 android:layout_width="wrap_content"

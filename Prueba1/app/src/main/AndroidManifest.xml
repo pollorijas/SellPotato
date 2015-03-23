@@ -94,6 +94,10 @@
             android:name=".MostrarRuta"
             android:label="@string/title_activity_mostrar_ruta" >
         </activity>
+        <activity
+            android:name=".OpcionPago"
+            android:label="@string/title_activity_opcion_pago" >
+        </activity>
     </application>
 
 </manifest>

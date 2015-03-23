@@ -6,35 +6,26 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.TextView;
 
 
-public class GestionarCompra extends ActionBarActivity {
+public class OpcionPago extends ActionBarActivity {
 
-    ImageButton imgpago;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gestionar_compra);
+        setContentView(R.layout.opcion_pago);
 
-        imgpago = (ImageButton)findViewById(R.id.imgpago);
 
-        imgpago.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent op = new Intent(getApplicationContext(),OpcionPago.class);
-                startActivity(op);
-
-            }
-        });
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_gestionar_compra, menu);
+        getMenuInflater().inflate(R.menu.menu_opcion_pago, menu);
         return true;
     }
 

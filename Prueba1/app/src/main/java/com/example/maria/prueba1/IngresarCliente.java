@@ -80,10 +80,7 @@ public class IngresarCliente extends Activity{
             pDialog.show();
         }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
         @Override
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);

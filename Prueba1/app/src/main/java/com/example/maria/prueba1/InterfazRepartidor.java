@@ -25,7 +25,7 @@ public class InterfazRepartidor extends Activity {
 
         controler = Traspaso.getControler();
 
-        imgcamion = (ImageButton)findViewById(R.id.imgcamionadd);
+        imgcamion = (ImageButton)findViewById(R.id.imgwp);
 
         imgcamion.setOnClickListener(new View.OnClickListener() {
             @Override

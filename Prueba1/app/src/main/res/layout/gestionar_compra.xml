@@ -123,7 +123,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton6"
+                android:id="@+id/imgpago"
                 android:src="@drawable/pp"
                 android:layout_below="@+id/textView5"
                 android:layout_centerHorizontal="true"
@@ -135,7 +135,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Realizar Pago"
                 android:id="@+id/textView29"
-                android:layout_below="@+id/imageButton6"
+                android:layout_below="@+id/imgpago"
                 android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
