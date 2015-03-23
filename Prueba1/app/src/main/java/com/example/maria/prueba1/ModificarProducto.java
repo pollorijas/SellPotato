@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class ModificarProducto extends Activity {
 
-    ListView lv1=["asas","dcdc"];
+
 
 
     Handler h1 = new Handler(){
@@ -37,7 +37,6 @@ public class ModificarProducto extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modificar_producto);
 
-        lv1 = (ListView)findViewById(R.id.lv1);
 
 
     }

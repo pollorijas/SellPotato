@@ -15,7 +15,7 @@ public class ProductoDB implements BDInterface {
             //SQL corregido, pero no ingresa los datos desde la aplicación...
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://vendepapas.esy.es/SQL/producto_registro.php?nombre_producto=" + ((Producto) t).getnombreProducto()
+                http.httpGetData("http://10.0.2.2/SSPP/producto_registro.php?nombre_producto=" + ((Producto) t).getnombreProducto()
                 + "&precio_unitario=" + ((Producto) t).getprecio()
                 + "&descripcion_producto=" + ((Producto) t).getdescripcion()
                 + "&stock_producto=" + ((Producto) t).getstock());
