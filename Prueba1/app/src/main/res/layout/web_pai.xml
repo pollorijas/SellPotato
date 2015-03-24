@@ -33,7 +33,7 @@
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="393dp"
+            android:layout_height="398dp"
             android:layout_gravity="center_horizontal|bottom">
 
 
@@ -51,7 +51,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView2"
                 android:src="@drawable/tc"
-                android:layout_above="@+id/btntc"
+                android:layout_marginTop="28dp"
+                android:layout_below="@+id/textView17"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
 
@@ -60,10 +61,21 @@
                 android:layout_height="wrap_content"
                 android:text="Tarjeta de Crédito"
                 android:id="@+id/btntc"
-                android:layout_above="@+id/imageView4"
+                android:layout_below="@+id/imageView2"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="19dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Red Compra"
+                android:id="@+id/btnrc"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="112dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true" />
 
@@ -72,19 +84,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView4"
                 android:src="@drawable/rc"
-                android:layout_centerVertical="true"
+                android:layout_above="@+id/btnrc"
                 android:layout_centerHorizontal="true" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Red Compra"
-                android:id="@+id/btnrc"
-                android:layout_below="@+id/imageView4"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
         </RelativeLayout>
 
     </FrameLayout>
