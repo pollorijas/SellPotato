@@ -5,8 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,16 +13,6 @@ import android.widget.Toast;
 
 import com.example.maria.prueba1.capanegocio.Cliente;
 import com.example.maria.prueba1.capanegocio.ClienteControler;
-
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-
-import java.io.IOException;
 
 public class IngresarCliente extends Activity{
 

@@ -12,6 +12,8 @@ public class Cliente extends Persona {
 	private String descripcionHogar;
 	private String direccion;
 	private String fono;
+    private String longitud;
+    private String latitud;
 	public Pedido m_Pedido;
 	public Ruta m_Ruta;
 
@@ -60,5 +62,21 @@ public class Cliente extends Persona {
 
     public ClienteDB getData() {
         return data;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
     }
 }//end Cliente
