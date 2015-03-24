@@ -1,44 +1,24 @@
 package com.example.maria.prueba1;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 
-public class OpcionPago extends ActionBarActivity {
-
-    ImageButton imgwp;
-
-
+public class TarjetaCredito extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.opcion_pago);
-
-        imgwp = (ImageButton)findViewById(R.id.imgwp);
-
-        imgwp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent wp = new Intent(getApplicationContext(),WebPai.class);
-                startActivity(wp);
-            }
-        });
-
-
+        setContentView(R.layout.tarjeta_credito);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_opcion_pago, menu);
+        getMenuInflater().inflate(R.menu.menu_tarjeta_credito, menu);
         return true;
     }
 

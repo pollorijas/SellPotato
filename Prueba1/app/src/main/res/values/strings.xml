@@ -14,5 +14,8 @@
     <string name="title_activity_ingresar_producto">IngresarProducto</string>
     <string name="title_activity_mostrar_ruta">Map</string>
     <string name="title_activity_opcion_pago">OpcionPago</string>
+    <string name="title_activity_web_pai">WebPai</string>
+    <string name="title_activity_tarjeta_credito">TarjetaCredito</string>
+    <string name="title_activity_red_compra">RedCompra</string>
 
 </resources>

@@ -98,6 +98,18 @@
             android:name=".OpcionPago"
             android:label="@string/title_activity_opcion_pago" >
         </activity>
+        <activity
+            android:name=".WebPai"
+            android:label="@string/title_activity_web_pai" >
+        </activity>
+        <activity
+            android:name=".TarjetaCredito"
+            android:label="@string/title_activity_tarjeta_credito" >
+        </activity>
+        <activity
+            android:name=".RedCompra"
+            android:label="@string/title_activity_red_compra" >
+        </activity>
     </application>
 
 </manifest>

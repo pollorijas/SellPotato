@@ -6,39 +6,43 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.Button;
 
 
-public class OpcionPago extends ActionBarActivity {
+public class WebPai extends ActionBarActivity {
 
-    ImageButton imgwp;
-
-
+    Button btnrc, btntc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.opcion_pago);
+        setContentView(R.layout.web_pai);
 
-        imgwp = (ImageButton)findViewById(R.id.imgwp);
+        btnrc = (Button)findViewById(R.id.btnrc);
+        btntc = (Button)findViewById(R.id.btntc);
 
-        imgwp.setOnClickListener(new View.OnClickListener() {
+        btnrc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent wp = new Intent(getApplicationContext(),WebPai.class);
-                startActivity(wp);
+                Intent rc = new Intent(getApplicationContext(),RedCompra.class);
+                startActivity(rc);
             }
         });
 
-
+        btntc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tc = new Intent(getApplicationContext(),RedCompra.class);
+                startActivity(tc);
+            }
+        });
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_opcion_pago, menu);
+        getMenuInflater().inflate(R.menu.menu_web_pai, menu);
         return true;
     }
 
