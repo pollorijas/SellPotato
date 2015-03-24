@@ -32,7 +32,9 @@ public class ClienteDB implements BDInterface {
                         + "&telefono=" + ((Cliente) t).getfono()
                         + "&direccion=" + ((Cliente) t).getdireccion()
                         + "&descripcion=" + ((Cliente) t).getdescripcionHogar()
-                        + "&password=" + ((Cliente) t).getPassword());
+                        + "&password=" + ((Cliente) t).getPassword()
+                        + "&latitud=" + ((Cliente) t).getLatitud()
+                        + "&longitud=" + ((Cliente) t).getLongitud());
                 return "SUCCESSFUL";
             }
             catch(Exception e){
@@ -56,7 +58,9 @@ public class ClienteDB implements BDInterface {
                         + "&telefono=" + ((Cliente) t).getfono()
                         + "&direccion=" + ((Cliente) t).getdireccion()
                         + "&descripcion=" + ((Cliente) t).getdescripcionHogar()
-                        + "&password=" + ((Cliente) t).getPassword());
+                        + "&password=" + ((Cliente) t).getPassword()
+                        + "&latitud=" + ((Cliente) t).getLatitud()
+                        + "&longitud=" + ((Cliente) t).getLongitud());
                 return "SUCCESSFUL";
             }
             catch(Exception e){
@@ -104,7 +108,9 @@ public class ClienteDB implements BDInterface {
                     ((Cliente) t).setapellido(ja.getString(2));
                     ((Cliente) t).setfono(ja.getString(3));
                     ((Cliente) t).setdireccion(ja.getString(4));
-                    ((Cliente) t).setdescripcionHogar(ja.getString(5));
+                    ((Cliente) t).setLatitud(ja.getString(5));
+                    ((Cliente) t).setLongitud(ja.getString(6));
+                    ((Cliente) t).setdescripcionHogar(ja.getString(7));
                 } catch (JSONException e) {
                     Log.e("Error Conexion", "No se Pudo Realizar la Conexion");
                     e.printStackTrace();

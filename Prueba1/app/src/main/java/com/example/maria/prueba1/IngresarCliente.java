@@ -62,7 +62,7 @@ public class IngresarCliente extends Activity{
         @Override
         protected void onPreExecute() {
             pDialog = new ProgressDialog(IngresarCliente.this);
-            pDialog.setMessage("Actualizando...");
+            pDialog.setMessage("Registrando...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
