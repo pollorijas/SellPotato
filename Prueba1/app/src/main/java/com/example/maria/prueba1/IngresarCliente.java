@@ -32,6 +32,8 @@ public class IngresarCliente extends Activity{
         descripcionc = (EditText)findViewById(R.id.descripcionc);
         clavec = (EditText)findViewById(R.id.clavec);
 
+        controler = new ClienteControler();
+
         ingresar_cliente = (Button)findViewById(R.id.ingresar_cliente);
 
         ingresar_cliente.setOnClickListener(new View.OnClickListener() {

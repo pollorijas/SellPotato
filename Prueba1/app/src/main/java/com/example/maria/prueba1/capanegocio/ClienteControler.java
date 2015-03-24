@@ -90,6 +90,7 @@ public class ClienteControler{
                 JSONObject locJson=geoJson.getJSONObject("location");
                 cliente.setLatitud(locJson.getString("lat"));
                 cliente.setLongitud(locJson.getString("lng"));
+                Log.e("Coordenadas: ","Lat: " + cliente.getLatitud() + ", Lng: " + cliente.getLongitud());
             }
         } catch (JSONException e) {
             // TODO Auto-generated catch block
