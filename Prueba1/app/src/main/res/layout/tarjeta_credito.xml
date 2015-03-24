@@ -75,15 +75,14 @@
                 android:id="@+id/textView34"
                 android:layout_below="@+id/textView17"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="28dp" />
+                android:layout_alignParentStart="true" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/editText"
+                android:id="@+id/numerotarjeta"
                 android:layout_below="@+id/textView34"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -96,18 +95,18 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Vencimiento"
                 android:id="@+id/textView35"
-                android:layout_below="@+id/editText"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/numerotarjeta"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="29dp" />
+                android:layout_alignParentStart="true" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/etxdia"
-                android:layout_centerVertical="true"
+                android:id="@+id/dia"
+                android:layout_below="@+id/textView35"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignRight="@+id/textView35"
@@ -119,9 +118,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/etxanio"
-                android:layout_alignTop="@+id/etxdia"
-                android:layout_toRightOf="@+id/etxdia"
+                android:id="@+id/anio"
+                android:layout_alignBottom="@+id/dia"
+                android:layout_toRightOf="@+id/dia"
                 android:layout_alignRight="@+id/txttotal"
                 android:layout_alignEnd="@+id/txttotal"
                 android:text="Año" />
@@ -130,12 +129,60 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
+                android:text="Código de Verificación"
                 android:id="@+id/textView36"
-                android:layout_below="@+id/etxdia"
+                android:layout_below="@+id/dia"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="28dp" />
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:layout_below="@+id/textView36"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Opciones de Pago"
+                android:id="@+id/textView37"
+                android:layout_below="@+id/editText"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="18dp" />
+
+            <ExpandableListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/expandableListView"
+                android:layout_below="@+id/editText"
+                android:layout_toRightOf="@+id/textView36"
+                android:layout_toEndOf="@+id/textView36" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anular"
+                android:id="@+id/btnanular"
+                android:layout_marginTop="40dp"
+                android:layout_below="@+id/textView37"
+                android:layout_alignRight="@+id/textView37"
+                android:layout_alignEnd="@+id/textView37" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pagar"
+                android:id="@+id/btnpagar"
+                android:layout_alignTop="@+id/btnanular"
+                android:layout_toRightOf="@+id/txttotal"
+                android:layout_toEndOf="@+id/txttotal" />
 
         </RelativeLayout>
 
