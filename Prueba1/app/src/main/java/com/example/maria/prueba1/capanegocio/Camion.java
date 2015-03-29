@@ -18,7 +18,7 @@ public class Camion {
     private CamionDB data;
 
 	public Camion(){
-
+        data = new CamionDB();
 	}
 
 	public void finalize() throws Throwable {
