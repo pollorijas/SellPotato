@@ -14,7 +14,7 @@ import com.example.maria.prueba1.capanegocio.Traspaso;
  */
 public class InterfazRepartidor extends Activity {
 
-    ImageButton imgcamion;
+    ImageButton imgcamion, imgordenar;
 
     RepartidorControler controler;
 
@@ -26,6 +26,7 @@ public class InterfazRepartidor extends Activity {
         controler = Traspaso.getRepartidorControler();
 
         imgcamion = (ImageButton)findViewById(R.id.imgwp);
+        imgordenar = (ImageButton)findViewById(R.id.imgordenar);
 
         imgcamion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +34,14 @@ public class InterfazRepartidor extends Activity {
                 Traspaso.setRepartidorControler(controler);
                 Intent ri = new Intent(getApplicationContext(), GestionarCamion.class);
                 startActivity(ri);
+            }
+        });
+
+        imgordenar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent or = new Intent(getApplicationContext(), DistribucionPedido.class);
+                startActivity(or);
             }
         });
 
