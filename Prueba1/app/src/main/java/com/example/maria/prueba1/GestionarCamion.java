@@ -30,7 +30,7 @@ public class GestionarCamion extends ActionBarActivity {
     imgcamionupd.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view){
 
-            Traspaso.setControler(controler);
+
 
             Intent ri = new Intent(getApplicationContext(), ModificarCamion.class);
             startActivity(ri);
@@ -39,6 +39,7 @@ public class GestionarCamion extends ActionBarActivity {
 
     imgcamionadd.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view){
+            Traspaso.setControler(controler);
             Intent ri = new Intent(getApplicationContext(), IngresarCamion.class);
             startActivity(ri);
         }

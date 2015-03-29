@@ -30,6 +30,7 @@ public class InterfazRepartidor extends Activity {
         imgcamion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Traspaso.setControler(controler);
                 Intent ri = new Intent(getApplicationContext(), GestionarCamion.class);
                 startActivity(ri);
             }

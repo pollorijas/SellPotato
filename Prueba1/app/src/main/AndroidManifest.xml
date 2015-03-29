@@ -110,6 +110,10 @@
             android:name=".RedCompra"
             android:label="@string/title_activity_red_compra" >
         </activity>
+        <activity
+            android:name=".ListView"
+            android:label="@string/title_activity_list_view" >
+        </activity>
     </application>
 
 </manifest>

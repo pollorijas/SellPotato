@@ -17,5 +17,6 @@
     <string name="title_activity_web_pai">WebPai</string>
     <string name="title_activity_tarjeta_credito">TarjetaCredito</string>
     <string name="title_activity_red_compra">RedCompra</string>
+    <string name="title_activity_list_view">ListView</string>
 
 </resources>

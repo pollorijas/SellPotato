@@ -7,6 +7,7 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maria.prueba1.capanegocio.ClienteControler;
@@ -25,6 +26,7 @@ import java.io.IOException;
 
 public class IngresarCamion extends Activity {
     EditText patente_camion, marca_camion, modelo_camion, tara_camion, dimension_camion;
+    TextView rut;
     Button ingresar_camion;
     JSONArray ja;
     String data;
@@ -50,6 +52,9 @@ public class IngresarCamion extends Activity {
         modelo_camion = (EditText) findViewById(R.id.modelo);
         tara_camion = (EditText) findViewById(R.id.tara);
         dimension_camion = (EditText) findViewById(R.id.dimensiones);
+        rut = (TextView)findViewById(R.id.rut);
+
+        rut.setText(controler.getCliente().getrut());
 
         ingresar_camion = (Button) findViewById(R.id.ingresar_camion);
 

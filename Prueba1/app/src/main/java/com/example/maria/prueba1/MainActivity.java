@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.maria.prueba1.capanegocio.BodegueroControler;
 import com.example.maria.prueba1.capanegocio.ClienteControler;
 import com.example.maria.prueba1.capanegocio.LoginControler;
+import com.example.maria.prueba1.capanegocio.RepartidorControler;
 import com.example.maria.prueba1.capanegocio.Traspaso;
 import com.example.maria.prueba1.library.Httppostaux;
 
@@ -41,6 +42,8 @@ public class MainActivity extends ActionBarActivity {
     LoginControler lc;
     ClienteControler controler;
     BodegueroControler bodegueroControler;
+
+
 
     // String URL_connect="http://www.scandroidtest.site90.com/acces.php";
     String IP_Server="http://bdsia2.besaba.com";//IP DE NUESTRO PC
@@ -249,6 +252,8 @@ public class MainActivity extends ActionBarActivity {
                 ib.putExtra("user", user);
                 startActivity(ib);
             }else if(result.equals("ok") && tipo.equals("REPARTIDOR")){
+
+
                 Intent ir = new Intent(MainActivity.this, InterfazRepartidor.class);
                 ir.putExtra("user", user);
                 startActivity(ir);

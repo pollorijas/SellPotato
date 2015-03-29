@@ -111,7 +111,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignRight="@+id/textView35"
                 android:layout_alignEnd="@+id/textView35"
-                android:text="Día" />
+                android:editable="true" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -122,8 +122,7 @@
                 android:layout_alignBottom="@+id/dia"
                 android:layout_toRightOf="@+id/dia"
                 android:layout_alignRight="@+id/txttotal"
-                android:layout_alignEnd="@+id/txttotal"
-                android:text="Año" />
+                android:layout_alignEnd="@+id/txttotal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -150,20 +149,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Opciones de Pago"
+                android:text="N° de cuotas"
                 android:id="@+id/textView37"
                 android:layout_below="@+id/editText"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="18dp" />
-
-            <ExpandableListView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/expandableListView"
-                android:layout_below="@+id/editText"
-                android:layout_toRightOf="@+id/textView36"
-                android:layout_toEndOf="@+id/textView36" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -183,6 +174,17 @@
                 android:layout_alignTop="@+id/btnanular"
                 android:layout_toRightOf="@+id/txttotal"
                 android:layout_toEndOf="@+id/txttotal" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editText2"
+                android:layout_alignBottom="@+id/textView37"
+                android:layout_toRightOf="@+id/dia"
+                android:layout_alignRight="@+id/editText"
+                android:layout_alignEnd="@+id/editText" />
 
         </RelativeLayout>
 
