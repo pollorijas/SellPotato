@@ -22,7 +22,7 @@ public class CamionDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://10.0.2.2/SSPP/camion_registrar.php?patente=" + ((Camion) t).getpatente()
+                http.httpGetData("http://10.0.2.2/SSPP/camion_registro.php?patente=" + ((Camion) t).getpatente()
                 + "&rut=" + ((Camion) t).getM_Repartidor().getrut()
                 + "&marca=" + ((Camion) t).getmarca()
                 + "&modelo=" + ((Camion) t).getmodelo()
