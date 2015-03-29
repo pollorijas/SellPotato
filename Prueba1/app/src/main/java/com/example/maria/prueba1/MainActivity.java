@@ -4,21 +4,21 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maria.prueba1.capanegocio.BodegueroControler;
 import com.example.maria.prueba1.capanegocio.ClienteControler;
 import com.example.maria.prueba1.capanegocio.LoginControler;
+import com.example.maria.prueba1.capanegocio.RepartidorControler;
 import com.example.maria.prueba1.capanegocio.Traspaso;
 import com.example.maria.prueba1.library.Httppostaux;
 
@@ -41,7 +41,7 @@ public class MainActivity extends ActionBarActivity {
     LoginControler lc;
     ClienteControler controler;
     BodegueroControler bodegueroControler;
-
+    RepartidorControler repartidorControler;
 
 
     // String URL_connect="http://www.scandroidtest.site90.com/acces.php";
@@ -52,6 +52,7 @@ public class MainActivity extends ActionBarActivity {
 
     boolean result_back;
     private ProgressDialog pDialog;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -252,6 +253,10 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(ib);
             }else if(result.equals("ok") && tipo.equals("REPARTIDOR")){
 
+                repartidorControler = new RepartidorControler();
+                repartidorControler.setRepartidor(lc.getRepartidor());
+
+                Traspaso.setRepartidorControler(repartidorControler);
 
                 Intent ir = new Intent(MainActivity.this, InterfazRepartidor.class);
                 ir.putExtra("user", user);
