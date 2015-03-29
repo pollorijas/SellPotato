@@ -3,14 +3,9 @@ package com.example.maria.prueba1;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Message;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,15 +14,6 @@ import android.widget.Toast;
 import com.example.maria.prueba1.capanegocio.BodegueroControler;
 import com.example.maria.prueba1.capanegocio.Producto;
 import com.example.maria.prueba1.capanegocio.Traspaso;
-
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
-
-import java.io.IOException;
 
 
 public class IngresarProducto extends ActionBarActivity {
@@ -92,12 +78,12 @@ public class IngresarProducto extends ActionBarActivity {
             boolean result = aBoolean;
 
             if(result){
-                msgShow("El Cliente Ha sido Ingresado Correctamente, Redirecionando al Login");
+                msgShow("El producto ha sido Correctamente Ingresado.");
                 SystemClock.sleep(50);
                 Intent iu = new Intent(IngresarProducto.this, InterfazBodeguero.class);
                 finish();
             }
-            else msgShow("Error: Los datos no has sido Actualizados");
+            else msgShow("Error: El producto ha podido ser Registrado.");
 
         }
 
