@@ -1,50 +1,33 @@
 package com.example.maria.prueba1;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.maria.prueba1.capanegocio.ClienteControler;
+import com.example.maria.prueba1.capanegocio.Camion;
+import com.example.maria.prueba1.capanegocio.RepartidorControler;
 import com.example.maria.prueba1.capanegocio.Traspaso;
-
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-
-import java.io.IOException;
 
 
 public class IngresarCamion extends Activity {
     EditText patente_camion, marca_camion, modelo_camion, tara_camion, dimension_camion;
 
     Button ingresar_camion;
-    JSONArray ja;
-    String data;
-    private ClienteControler controler;
+    public RepartidorControler controler;
+    public ProgressDialog pDialog;
 
-    Handler h1 = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-
-            Toast.makeText(getApplicationContext(),"Registro Exitoso",3000).show();
-        }
-    };
 
 
     protected  void  onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ingresar_camion);
-        controler = Traspaso.getControler();
+        controler = Traspaso.getRepartidorControler();
 
         patente_camion = (EditText) findViewById(R.id.txtpatente);
         marca_camion = (EditText) findViewById(R.id.marca);
@@ -52,45 +35,69 @@ public class IngresarCamion extends Activity {
         tara_camion = (EditText) findViewById(R.id.tara);
         dimension_camion = (EditText) findViewById(R.id.dimensiones);
 
-
-
-
         ingresar_camion = (Button) findViewById(R.id.modificar_camion);
 
         ingresar_camion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
+                controler.setCamion(new Camion());
 
-                        httpGetData("http://10.0.2.2/SSPP/camion_registro.php?patente=" + patente_camion.getText() + "&marca=" + marca_camion.getText() + "&modelo=" + modelo_camion.getText() + "&dimensiones=" + dimension_camion.getText()
-                                + "&tara=" + tara_camion.getText());
-                        h1.sendEmptyMessage(1);
-                    }
-                }).start();
+                controler.getCamion().setcarga(Integer.parseInt(tara_camion.getText().toString()));
+                controler.getCamion().setDimencion(Integer.parseInt(dimension_camion.getText().toString()));
+                controler.getCamion().setmodelo(modelo_camion.getText().toString());
+                controler.getCamion().setpatente(patente_camion.getText().toString());
+                controler.getCamion().setmarca(modelo_camion.getText().toString());
+                controler.getCamion().setM_Repartidor(controler.getRepartidor());
+
+                new AsyncIngresarCamion().execute(true);
             }
         });
     }
 
-    public String httpGetData(String mURL) {
-        String response = "";
-        mURL = mURL.replace(" ", "%20");
-        HttpClient httpclient = new DefaultHttpClient();
-        HttpGet httpget = new HttpGet(mURL);
+    class AsyncIngresarCamion extends AsyncTask<Boolean,String,Boolean>
+    {
 
-        ResponseHandler<String> responsehandler = new BasicResponseHandler();
-        try {
-            response = httpclient.execute(httpget, responsehandler);
-
-        } catch (ClientProtocolException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        @Override
+        protected void onPreExecute() {
+            pDialog = new ProgressDialog(IngresarCamion.this);
+            pDialog.setMessage("Registrando...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
         }
-        return response;
+
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+
+            pDialog.dismiss();
+
+            boolean result = aBoolean;
+
+            //Log.e("Datos:", "Datos: " + controler.getCliente().getPassword());
+
+            if(result){
+                msgShow("El Camion ha sido Registrado correctamente:");
+                Intent iu = new Intent(IngresarCamion.this, InterfazRepartidor.class);
+                finish();
+            }
+            else msgShow("Error: Los Datos no han sido Registrados.");
+
+        }
+
+        @Override
+        protected Boolean doInBackground(Boolean... params) {
+            if(controler.RegistrarCamion()) return true;
+            else return false;
+        }
     }
+
+    public void msgShow(String msg)
+    {
+        Toast t = Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT);
+        t.show();
+    }
+
 }

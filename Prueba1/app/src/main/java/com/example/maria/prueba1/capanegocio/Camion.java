@@ -1,5 +1,7 @@
 package com.example.maria.prueba1.capanegocio;
 
+import com.example.maria.prueba1.capadatos.CamionDB;
+
 /**
  * @author Freddy
  * @version 1.0
@@ -13,6 +15,7 @@ public class Camion {
 	private String marca;
 	private String modelo;
 	private Repartidor m_Repartidor;
+    private CamionDB data;
 
 	public Camion(){
 
@@ -87,5 +90,13 @@ public class Camion {
 
     public void setM_Repartidor(Repartidor m_Repartidor) {
         this.m_Repartidor = m_Repartidor;
+    }
+
+    public CamionDB getData() {
+        return data;
+    }
+
+    public void setData(CamionDB data) {
+        this.data = data;
     }
 }//end Camion

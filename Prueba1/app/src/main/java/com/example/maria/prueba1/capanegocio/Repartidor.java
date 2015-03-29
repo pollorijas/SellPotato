@@ -2,6 +2,8 @@ package com.example.maria.prueba1.capanegocio;
 
 import com.example.maria.prueba1.capadatos.RepartidorDB;
 
+import java.util.ArrayList;
+
 /**
  * @author Freddy
  * @version 1.0
@@ -13,8 +15,11 @@ public class Repartidor extends Persona {
 	private String licenciaConducir;
 	private Ruta m_Ruta;
     private RepartidorDB repartidorDB;
+    private ArrayList<Camion> camions;
 
 	public Repartidor(){
+
+        camions = new ArrayList<Camion>();
 
 	}
 
@@ -59,5 +64,13 @@ public class Repartidor extends Persona {
 
     public void setRepartidorDB(RepartidorDB repartidorDB) {
         this.repartidorDB = repartidorDB;
+    }
+
+    public ArrayList<Camion> getCamions() {
+        return camions;
+    }
+
+    public void setCamions(ArrayList<Camion> camions) {
+        this.camions = camions;
     }
 }//end Repartidor
