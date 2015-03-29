@@ -1,5 +1,7 @@
 package com.example.maria.prueba1.capanegocio;
 
+import com.example.maria.prueba1.capadatos.RepartidorDB;
+
 /**
  * @author Freddy
  * @version 1.0
@@ -9,7 +11,8 @@ public class Repartidor extends Persona {
 
 	private String estado;
 	private String licenciaConducir;
-	public Ruta m_Ruta;
+	private Ruta m_Ruta;
+    private RepartidorDB repartidorDB;
 
 	public Repartidor(){
 
@@ -41,4 +44,20 @@ public class Repartidor extends Persona {
 	public void setestado(String newVal){
 		estado = newVal;
 	}
+
+    public Ruta getM_Ruta() {
+        return m_Ruta;
+    }
+
+    public void setM_Ruta(Ruta m_Ruta) {
+        this.m_Ruta = m_Ruta;
+    }
+
+    public RepartidorDB getRepartidorDB() {
+        return repartidorDB;
+    }
+
+    public void setRepartidorDB(RepartidorDB repartidorDB) {
+        this.repartidorDB = repartidorDB;
+    }
 }//end Repartidor

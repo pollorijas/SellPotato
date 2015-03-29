@@ -32,6 +32,20 @@ public class ClienteControler{
 
     public boolean ModificarCliente()
     {
+        String dir = cliente.getdireccion().replace(' ','+');
+        String url = "https://maps.googleapis.com/maps/api/geocode/json?address=+"+ dir +",+Iquique&region=cl&sensor=false";
+
+        HttpConnection http = new HttpConnection();
+
+        try {
+            String response = http.readUrl(url);
+            boolean test = parsePoint(response);
+
+        } catch (IOException e) {
+            Log.d("Error en conectarse a google maps", e.toString());
+            return false;
+        }
+
         String get = cliente.getData().Update(cliente);
         if(get.equals("SUCCESSFUL")) return true;
         else return false;
@@ -85,7 +99,7 @@ public class ClienteControler{
                     }
                     tblPoints.add(tblPoint);
                 }
-                cliente.setdireccion(item.getString("formatted_address"));
+                //cliente.setdireccion(item.getString("formatted_address"));
                 JSONObject geoJson=item.getJSONObject("geometry");
                 JSONObject locJson=geoJson.getJSONObject("location");
                 cliente.setLatitud(locJson.getString("lat"));
