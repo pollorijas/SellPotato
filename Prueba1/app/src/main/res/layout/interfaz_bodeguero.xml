@@ -46,12 +46,12 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="34dp"
                 android:layout_marginStart="34dp"
-                android:layout_alignBottom="@+id/imgproductoupd" />
+                android:layout_alignBottom="@+id/imgproductocancel" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imgproductoupd"
+                android:id="@+id/imgproductocancel"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="42dp"
@@ -64,7 +64,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Ingresar Producto"
                 android:id="@+id/textView30"
-                android:layout_below="@+id/imgproductoupd"
+                android:layout_below="@+id/imgproductocancel"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="11dp"

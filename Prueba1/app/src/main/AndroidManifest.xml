@@ -114,6 +114,10 @@
             android:name=".ListView"
             android:label="@string/title_activity_list_view" >
         </activity>
+        <activity
+            android:name=".EstadoPedido"
+            android:label="@string/title_activity_estado_pedido" >
+        </activity>
     </application>
 
 </manifest>

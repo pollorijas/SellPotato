@@ -4,15 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.maria.prueba1.capanegocio.BodegueroControler;
-import com.example.maria.prueba1.capanegocio.ClienteControler;
 import com.example.maria.prueba1.capanegocio.Traspaso;
 
 /**
@@ -31,7 +25,7 @@ public class InterfazBodeguero extends Activity {
         controler = Traspaso.getBodegueroControler();
 
         imgproductoadd = (ImageButton)findViewById(R.id.imgproductoadd);
-        imgproductoupd = (ImageButton)findViewById(R.id.imgproductoupd);
+        imgproductoupd = (ImageButton)findViewById(R.id.imgproductocancel);
         imgprocesarp = (ImageButton)findViewById(R.id.imgprocesarp);
 
 

@@ -8,10 +8,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import java.util.Stack;
+
 
 public class GestionarCompra extends ActionBarActivity {
 
-    ImageButton imgpago;
+    ImageButton imgpago, imgproductoadd, imgproductoupd, imgproductocancel, imgstate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +21,41 @@ public class GestionarCompra extends ActionBarActivity {
         setContentView(R.layout.gestionar_compra);
 
         imgpago = (ImageButton)findViewById(R.id.imgpago);
+        imgproductoadd = (ImageButton)findViewById(R.id.imgproductoadd);
+        imgproductocancel = (ImageButton)findViewById(R.id.imgproductocancel);
+        imgstate = (ImageButton)findViewById(R.id.imgstate);
 
+        imgproductoadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent add = new Intent(getApplicationContext(),GenerarPedido.class);
+                startActivity(add);
+            }
+        });
+
+        imgproductoupd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent upd = new Intent(getApplicationContext(),ModificarPedido.class);
+                startActivity(upd);
+            }
+        });
+
+        imgproductocancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent can = new Intent(getApplicationContext(), CancelarPedido.class);
+                startActivity(can);
+            }
+        });
+
+        imgstate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent st = new Intent(getApplicationContext(), EstadoPedido.class);
+                startActivity(st);
+            }
+        });
         imgpago.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
