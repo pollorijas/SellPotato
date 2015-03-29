@@ -19,7 +19,6 @@ import android.widget.Toast;
 import com.example.maria.prueba1.capanegocio.BodegueroControler;
 import com.example.maria.prueba1.capanegocio.ClienteControler;
 import com.example.maria.prueba1.capanegocio.LoginControler;
-import com.example.maria.prueba1.capanegocio.RepartidorControler;
 import com.example.maria.prueba1.capanegocio.Traspaso;
 import com.example.maria.prueba1.library.Httppostaux;
 

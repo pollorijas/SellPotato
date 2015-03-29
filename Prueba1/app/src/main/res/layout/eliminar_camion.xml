@@ -3,10 +3,121 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.maria.prueba1.EliminarCamion">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/Prueba1"
+    android:clickable="false"
+    android:background="#ffffffff">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="91dp"
+            android:layout_gravity="right|top">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/agro3" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="418dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:id="@+id/ly">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Rut:"
+                android:id="@+id/text"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/txtrut"
+                android:layout_alignBottom="@+id/text"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Patente:"
+                android:id="@+id/textView25"
+                android:layout_marginTop="32dp"
+                android:layout_below="@+id/text"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/txtpatente"
+                android:layout_alignBottom="@+id/textView25"
+                android:layout_alignLeft="@+id/txtrut"
+                android:layout_alignStart="@+id/txtrut" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Marca:"
+                android:id="@+id/textView27"
+                android:layout_below="@+id/textView25"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="39dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/txtmarca"
+                android:layout_alignBottom="@+id/textView27"
+                android:layout_alignLeft="@+id/txtpatente"
+                android:layout_alignStart="@+id/txtpatente" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eliminar"
+                android:id="@+id/btndel"
+                android:layout_marginTop="103dp"
+                android:layout_below="@+id/textView27"
+                android:layout_toRightOf="@+id/text"
+                android:layout_toEndOf="@+id/text" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:id="@+id/btncancel"
+                android:layout_alignTop="@+id/btndel"
+                android:layout_toRightOf="@+id/txtmarca"
+                android:layout_toEndOf="@+id/txtmarca"
+                android:layout_marginLeft="36dp"
+                android:layout_marginStart="36dp" />
+        </RelativeLayout>
+
+    </FrameLayout>
 </RelativeLayout>
