@@ -131,7 +131,7 @@ public class ProductoDB implements BDInterface {
 
             ja = null;
             try {
-                data = http.readUrl("http://vendepapas.esy.es/SQL/SQLTEST.php?id_producto=1" );
+                data = http.readUrl("http://10.0.2.2/SSPP/obtenerprodctos.php" );
             } catch (IOException e) {
                 e.printStackTrace();
             }

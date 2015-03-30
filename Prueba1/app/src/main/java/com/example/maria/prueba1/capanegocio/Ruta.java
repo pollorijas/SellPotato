@@ -18,9 +18,11 @@ public class Ruta {
 	private IGoogleApiMaps m_IGoogleApiMaps;
     private ArrayList<Cliente> clientes;
     private RutaDB rutaDB;
+    private ArrayList<Ubicacion> ubicaciones;
 
 	public Ruta(){
         clientes =  new ArrayList<Cliente>();
+        rutaDB = new RutaDB();
 	}
 
 	public void finalize() throws Throwable {
@@ -92,5 +94,13 @@ public class Ruta {
 
     public void setRutaDB(RutaDB rutaDB) {
         this.rutaDB = rutaDB;
+    }
+
+    public ArrayList<Ubicacion> getUbicaciones() {
+        return ubicaciones;
+    }
+
+    public void setUbicaciones(ArrayList<Ubicacion> ubicaciones) {
+        this.ubicaciones = ubicaciones;
     }
 }//end Ruta

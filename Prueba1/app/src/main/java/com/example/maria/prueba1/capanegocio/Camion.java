@@ -2,6 +2,8 @@ package com.example.maria.prueba1.capanegocio;
 
 import com.example.maria.prueba1.capadatos.CamionDB;
 
+import java.util.ArrayList;
+
 /**
  * @author Freddy
  * @version 1.0
@@ -16,6 +18,7 @@ public class Camion {
 	private String modelo;
 	private Repartidor m_Repartidor;
     private CamionDB data;
+    private ArrayList<Ubicacion> ubicacions;
 
 	public Camion(){
         data = new CamionDB();
@@ -98,5 +101,13 @@ public class Camion {
 
     public void setData(CamionDB data) {
         this.data = data;
+    }
+
+    public ArrayList<Ubicacion> getUbicacions() {
+        return ubicacions;
+    }
+
+    public void setUbicacions(ArrayList<Ubicacion> ubicacions) {
+        this.ubicacions = ubicacions;
     }
 }//end Camion

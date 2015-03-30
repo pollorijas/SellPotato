@@ -1,5 +1,7 @@
 package com.example.maria.prueba1.capanegocio;
 
+import com.example.maria.prueba1.capadatos.PedidoDB;
+
 /**
  * @author Freddy
  * @version 1.0
@@ -14,8 +16,11 @@ public class Pedido {
 	private int monto;
 	private String estadoPedido;
 	public Paquete m_Paquete;
+    private PedidoDB data;
 
 	public Pedido(){
+
+        data = new PedidoDB();
 
 	}
 
@@ -93,4 +98,8 @@ public class Pedido {
 	public void setestadoPedido(String newVal){
 		estadoPedido = newVal;
 	}
+
+    public PedidoDB getData() {
+        return data;
+    }
 }//end Pedido

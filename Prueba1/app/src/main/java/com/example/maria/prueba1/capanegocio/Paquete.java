@@ -1,5 +1,7 @@
 package com.example.maria.prueba1.capanegocio;
 
+import com.example.maria.prueba1.capadatos.PaqueteDB;
+
 /**
  * @author Freddy
  * @version 1.0
@@ -12,8 +14,13 @@ public class Paquete {
 	private String fechaEmbarque;
 	public Bodeguero m_Bodeguero;
 	public Producto m_Producto;
+    private PaqueteDB data;
+    private Pedido pedido;
 
 	public Paquete(){
+
+        data = new PaqueteDB();
+        pedido = new Pedido();
 
 	}
 
@@ -55,4 +62,12 @@ public class Paquete {
 	public void setfechaEmbarque(String newVal){
 		fechaEmbarque = newVal;
 	}
+
+    public PaqueteDB getData() {
+        return data;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
 }//end Paquete
