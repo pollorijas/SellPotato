@@ -3,6 +3,7 @@ package com.example.maria.prueba1.capadatos;
 import android.util.Log;
 
 import com.example.maria.prueba1.capanegocio.Camion;
+import com.example.maria.prueba1.capanegocio.Repartidor;
 import com.example.maria.prueba1.library.HttpHelpingClass;
 
 import org.json.JSONArray;
