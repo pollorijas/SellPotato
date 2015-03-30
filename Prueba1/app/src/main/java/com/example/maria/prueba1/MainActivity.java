@@ -15,9 +15,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.maria.prueba1.capadatos.ProductoDB;
 import com.example.maria.prueba1.capanegocio.BodegueroControler;
 import com.example.maria.prueba1.capanegocio.ClienteControler;
 import com.example.maria.prueba1.capanegocio.LoginControler;
+import com.example.maria.prueba1.capanegocio.Producto;
 import com.example.maria.prueba1.capanegocio.RepartidorControler;
 import com.example.maria.prueba1.capanegocio.Traspaso;
 import com.example.maria.prueba1.library.Httppostaux;
@@ -68,6 +70,8 @@ public class MainActivity extends ActionBarActivity {
        // registrar = (Button) findViewById(R.id.Bregistrar);
         link = (TextView)findViewById(R.id.link);
 
+        //TestingProduct
+        //new ProductoDB().Get(new Producto());
 
         //Login button action
         blogin.setOnClickListener(new View.OnClickListener(){
@@ -208,6 +212,10 @@ public class MainActivity extends ActionBarActivity {
             //obtnemos usr y pass
             user=params[0];
             pass=params[1];
+
+            ArrayList<Producto> p = new ArrayList<>();
+            p = new ProductoDB().GetAll(p);
+            Log.e("DATA",p.toString());
 
             //enviamos y recibimos y analizamos los datos en segundo plano.
             if (LoginIn(user, pass)){
