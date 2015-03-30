@@ -19,7 +19,7 @@ import com.example.maria.prueba1.capanegocio.Traspaso;
 public class IngresarCamion extends Activity {
     EditText patente_camion, marca_camion, modelo_camion, tara_camion, dimension_camion;
     TextView rut;
-    Button ingresar_camion;
+    Button ingresar_camion, btncancel;
     public RepartidorControler controler;
     public ProgressDialog pDialog;
 
@@ -38,6 +38,7 @@ public class IngresarCamion extends Activity {
         rut = (TextView)findViewById(R.id.txtrut);
 
         ingresar_camion = (Button) findViewById(R.id.modificar_camion);
+        btncancel = (Button)findViewById(R.id.btncancel);
 
         rut.setText(controler.getRepartidor().getrut()); // esto lo hice yo
 
@@ -55,6 +56,14 @@ public class IngresarCamion extends Activity {
                 controler.getCamion().setM_Repartidor(controler.getRepartidor());
 
                 new AsyncIngresarCamion().execute(true);
+            }
+        });
+
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent can = new Intent(getApplicationContext(), GestionarCamion.class);
+                startActivity(can);
             }
         });
     }

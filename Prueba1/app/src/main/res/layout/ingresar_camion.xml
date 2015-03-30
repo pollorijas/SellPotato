@@ -152,9 +152,10 @@
                 android:layout_height="wrap_content"
                 android:text="Registrar"
                 android:id="@+id/modificar_camion"
+                android:layout_marginBottom="64dp"
                 android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="74dp" />
+                android:layout_toRightOf="@+id/textView11"
+                android:layout_toEndOf="@+id/textView11" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -175,6 +176,15 @@
                 android:layout_alignBottom="@+id/textView6"
                 android:layout_alignLeft="@+id/tara"
                 android:layout_alignStart="@+id/tara" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:id="@+id/btncancel"
+                android:layout_alignTop="@+id/modificar_camion"
+                android:layout_alignRight="@+id/tara"
+                android:layout_alignEnd="@+id/tara" />
 
         </RelativeLayout>
 

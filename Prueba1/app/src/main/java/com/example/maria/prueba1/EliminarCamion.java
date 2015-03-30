@@ -1,17 +1,32 @@
 package com.example.maria.prueba1;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class EliminarCamion extends ActionBarActivity {
+
+    Button btncancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.eliminar_camion);
+
+        btncancel = (Button)findViewById(R.id.btncancel);
+
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent can = new Intent(getApplicationContext(), GestionarCamion.class);
+                startActivity(can);
+            }
+        });
     }
 
 
