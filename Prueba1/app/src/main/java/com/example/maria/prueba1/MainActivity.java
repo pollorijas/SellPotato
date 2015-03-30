@@ -213,9 +213,6 @@ public class MainActivity extends ActionBarActivity {
             user=params[0];
             pass=params[1];
 
-            ArrayList<Producto> p = new ArrayList<>();
-            p = new ProductoDB().GetAll(p);
-            Log.e("DATA",p.toString());
 
             //enviamos y recibimos y analizamos los datos en segundo plano.
             if (LoginIn(user, pass)){
