@@ -24,6 +24,7 @@ public class GestionarCompra extends ActionBarActivity {
         imgproductoadd = (ImageButton)findViewById(R.id.imgproductoadd);
         imgproductocancel = (ImageButton)findViewById(R.id.imgproductocancel);
         imgstate = (ImageButton)findViewById(R.id.imgstate);
+        imgproductoupd = (ImageButton)findViewById(R.id.imgproductoupd);
 
         imgproductoadd.setOnClickListener(new View.OnClickListener() {
             @Override

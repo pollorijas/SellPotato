@@ -42,10 +42,12 @@ public class IngresarProducto extends ActionBarActivity {
             public void onClick(View v) {
 
                 Producto p = new Producto();
-                p.setdescripcion(descripcion_producto.getText().toString());
                 p.setnombreProducto(nombre_producto.getText().toString());
-                p.setstock(Integer.parseInt(stock_producto.getText().toString()));
                 p.setprecio(Integer.parseInt(precio_producto.getText().toString()));
+                p.setdescripcion(descripcion_producto.getText().toString());
+                p.setstock(Integer.parseInt(stock_producto.getText().toString()));
+
+
 
                 controler.setProducto(p);
 
@@ -83,7 +85,7 @@ public class IngresarProducto extends ActionBarActivity {
                 Intent iu = new Intent(IngresarProducto.this, InterfazBodeguero.class);
                 finish();
             }
-            else msgShow("Error: El producto ha podido ser Registrado.");
+            else msgShow("Error: El producto no ha podido ser Registrado.");
 
         }
 

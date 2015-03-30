@@ -3,6 +3,7 @@ package com.example.maria.prueba1.capadatos;
 import android.util.Log;
 
 import com.example.maria.prueba1.capanegocio.Camion;
+import com.example.maria.prueba1.capanegocio.Repartidor;
 import com.example.maria.prueba1.library.HttpHelpingClass;
 
 import org.json.JSONArray;
@@ -45,9 +46,10 @@ public class CamionDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://10.0.2.2/SSPP/camion_atualizar.php?&marca=" + ((Camion) t).getmarca()
+                http.httpGetData("http://10.0.2.2/SSPP/camion_atualizar.php?patente=" + ((Camion) t).getpatente()
+                        +"&marca=" + ((Camion) t).getmarca()
                         + "&modelo=" + ((Camion) t).getmodelo()
-                        + "&dimenciones=" + ((Camion) t).getDimencion()
+                        + "&dimensiones=" + ((Camion) t).getDimencion()
                         + "&tara=" + ((Camion) t).getcarga());
                 aux="SUCCESSFUL";
             }catch(Exception e)

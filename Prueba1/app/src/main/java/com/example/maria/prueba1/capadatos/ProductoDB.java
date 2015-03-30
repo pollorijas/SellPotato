@@ -131,7 +131,11 @@ public class ProductoDB implements BDInterface {
 
             ja = null;
             try {
+<<<<<<< HEAD
                 data = http.readUrl("http://10.0.2.2/SSPP/obtenerprodctos.php" );
+=======
+                data = http.readUrl("http://10.0.2.2/SSPP/obtenerproductos.php" );
+>>>>>>> origin/master
             } catch (IOException e) {
                 e.printStackTrace();
             }

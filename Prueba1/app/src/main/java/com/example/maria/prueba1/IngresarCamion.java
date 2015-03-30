@@ -50,7 +50,7 @@ public class IngresarCamion extends Activity {
 
                 controler.getCamion().setcarga(Integer.parseInt(tara_camion.getText().toString()));
                 controler.getCamion().setDimencion(Integer.parseInt(dimension_camion.getText().toString()));
-                controler.getCamion().setmodelo(modelo_camion.getText().toString());
+                controler.getCamion().setmodelo(marca_camion.getText().toString());
                 controler.getCamion().setpatente(patente_camion.getText().toString());
                 controler.getCamion().setmarca(modelo_camion.getText().toString());
                 controler.getCamion().setM_Repartidor(controler.getRepartidor());
@@ -94,6 +94,7 @@ public class IngresarCamion extends Activity {
             if(result){
                 msgShow("El Camion ha sido Registrado correctamente:");
                 Intent iu = new Intent(IngresarCamion.this, InterfazRepartidor.class);
+                Traspaso.setRepartidorControler(controler);
                 finish();
             }
             else msgShow("Error: Los Datos no han sido Registrados.");

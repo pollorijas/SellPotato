@@ -4,36 +4,30 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.example.maria.prueba1.capanegocio.RepartidorControler;
 
 
 public class ListarCamion extends ActionBarActivity {
+
+    TextView txtpatente, marca, modelo,dimensiones, tara, txtrut;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listar_camion);
+
+        txtpatente = (TextView)findViewById(R.id.txtpatente);
+        marca = (TextView)findViewById(R.id.marca);
+        modelo = (TextView)findViewById(R.id.modelo);
+        dimensiones = (TextView)findViewById(R.id.dimensiones);
+        tara = (TextView)findViewById(R.id.tara);
+        txtrut = (TextView)findViewById(R.id.txtrut);
+
+
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_listar_camion, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -36,6 +36,7 @@ public class RepartidorControler {
         else return false;
     }
 
+<<<<<<< HEAD
     public void ObtenerClientes()
     {
         if(camion.getUbicacions() == null)
@@ -67,4 +68,13 @@ public class RepartidorControler {
         }
 
     }
+=======
+    public boolean ModificarCamion(){
+        String get = camion.getData().Update(camion);
+        if(get.equals("SUCCESSFUL")) return true;
+        else return false;
+    }
+
+
+>>>>>>> origin/master
 }
