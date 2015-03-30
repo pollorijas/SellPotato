@@ -45,9 +45,10 @@ public class CamionDB implements BDInterface {
         {
             HttpHelpingClass http = new HttpHelpingClass();
             try {
-                http.httpGetData("http://10.0.2.2/SSPP/camion_atualizar.php?&marca=" + ((Camion) t).getmarca()
+                http.httpGetData("http://10.0.2.2/SSPP/camion_atualizar.php?patente=" + ((Camion) t).getpatente()
+                        +"&marca=" + ((Camion) t).getmarca()
                         + "&modelo=" + ((Camion) t).getmodelo()
-                        + "&dimenciones=" + ((Camion) t).getDimencion()
+                        + "&dimensiones=" + ((Camion) t).getDimencion()
                         + "&tara=" + ((Camion) t).getcarga());
                 aux="SUCCESSFUL";
             }catch(Exception e)

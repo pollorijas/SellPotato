@@ -30,4 +30,12 @@ public class RepartidorControler {
         if(get.equals("SUCCESSFUL")) return true;
         else return false;
     }
+
+    public boolean ModificarCamion(){
+        String get = camion.getData().Update(camion);
+        if(get.equals("SUCCESSFUL")) return true;
+        else return false;
+    }
+
+
 }
